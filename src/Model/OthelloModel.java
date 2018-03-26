@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class OthelloModel {
     private OthelloModel() {
-        games = new ArrayList<>();
-        runningGame = null;
+        progresss = new ArrayList<>();
+        runningProgress = null;
     }
 
     public static OthelloModel getInstance() {
         return new OthelloModel();
     }
 
-    private ArrayList<GameModel> games;
+    private ArrayList<ProgressModel> progresss;
     private ArrayList<PlayerModel> players;
 
     public AddNewPlayerReturnValue addNewPlayer(PlayerModel player) {
@@ -23,69 +23,69 @@ public class OthelloModel {
         return addNewPlayerReturnValue;
     }
 
-    public AddNewGameReturnValue addNewGame(GameModel game) {
-        AddNewGameReturnValue addNewGameReturnValue = new AddNewGameReturnValue();
-        addNewGameReturnValue.setGameStatus(games.contains(game));
-        addNewGameReturnValue.setPlayerStatus(players.contains(game.getPlayer1()) && players.contains(game.getPlayer2()));
-        if (addNewGameReturnValue.isRequestValid()) {
-            games.add(game);
-            players.add(game.getPlayer1());
-            players.add(game.getPlayer2());
+    public AddNewProgressReturnValue addNewProgress(ProgressModel progress) {
+        AddNewProgressReturnValue addNewProgressReturnValue = new AddNewProgressReturnValue();
+        addNewProgressReturnValue.setProgressStatus(progresss.contains(progress));
+        addNewProgressReturnValue.setPlayerStatus(players.contains(progress.getPlayer1()) && players.contains(progress.getPlayer2()));
+        if (addNewProgressReturnValue.isRequestValid()) {
+            progresss.add(progress);
+            players.add(progress.getPlayer1());
+            players.add(progress.getPlayer2());
         }
-        return addNewGameReturnValue;
+        return addNewProgressReturnValue;
     }
 
-    public EndGameReturnValue endGame(GameModel game) {
-        EndGameReturnValue endGameReturnValue = new EndGameReturnValue(games.contains(game) || runningGame.equals(game));
-        if (games.contains(game)) {
-            games.remove(game);
+    public EndProgressReturnValue endProgress(ProgressModel progress) {
+        EndProgressReturnValue endProgressReturnValue = new EndProgressReturnValue(progresss.contains(progress) || runningProgress.equals(progress));
+        if (progresss.contains(progress)) {
+            progresss.remove(progress);
         }
-        if (game.whoWon() == PlayerType.PLAYER1) {
-            //TODO add me
-            game.getPlayer1().win();
-            game.getPlayer2().lose();
-        } else {
-            game.getPlayer2().win();
-            game.getPlayer1().lose();
-        }
-        return endGameReturnValue;
+//        if (progress.whoWon() == PlayerType.PLAYER1) {
+//            //TODO add me
+//            progress.getPlayer1().win();
+//            progress.getPlayer2().lose();
+//        } else {
+//            progress.getPlayer2().win();
+//            progress.getPlayer1().lose();
+//        }
+        return endProgressReturnValue;
     }
 
-    public GameModel findGameByName(String gameName) {
-        for (GameModel game : games) {
-            if (game.equals(gameName)) {
-                return game;
+    public ProgressModel findProgressByName(String progressName) {
+        for (ProgressModel progress : progresss) {
+            if (progress.equals(progressName)) {
+                return progress;
             }
         }
         return null;
     }
 
-    private GameModel runningGame;
+    private ProgressModel runningProgress;
 
-    public boolean isAnyGameRunning() {
-        if (runningGame == null) {
+    public boolean isAnyProgressRunning() {
+        if (runningProgress == null) {
             return false;
         }
         return true;
     }
 
-    public void quitGame() {
-        runningGame = null;
+    public void quitProgress() {
+        runningProgress = null;
     }
 
 }
 
-class AddNewGameReturnValue {
+class AddNewProgressReturnValue {
 
-    private boolean hasGame;
+    private boolean hasProgress;
     private boolean hasPlayer;
 
-    public boolean hasGame() {
-        return hasGame;
+    public boolean hasProgress() {
+        return hasProgress;
     }
 
-    public void setGameStatus(boolean hasGame) {
-        this.hasGame = hasGame;
+    public void setProgressStatus(boolean hasProgress) {
+        this.hasProgress = hasProgress;
     }
 
     public boolean hasPlayer() {
@@ -97,19 +97,19 @@ class AddNewGameReturnValue {
     }
 
     public boolean isRequestValid() {
-        return !hasGame && hasPlayer;
+        return !hasProgress && hasPlayer;
     }
 }
 
-class EndGameReturnValue {
-    private boolean hasGame;
+class EndProgressReturnValue {
+    private boolean hasProgress;
 
-    public boolean hasGame() {
-        return hasGame;
+    public boolean hasProgress() {
+        return hasProgress;
     }
 
-    EndGameReturnValue(boolean hasGame) {
-        this.hasGame = hasGame;
+    EndProgressReturnValue(boolean hasProgress) {
+        this.hasProgress = hasProgress;
     }
 }
 
