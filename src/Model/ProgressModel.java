@@ -26,6 +26,22 @@ public class ProgressModel {
         this.player2 = player2;
     }
 
+    public GameModel getCurTurnGame() {
+        return curTurnGame;
+    }
+
+    public void setCurTurnGame(GameModel curTurnGame) {
+        this.curTurnGame = curTurnGame;
+    }
+
+    public GameModel getLastTurnGame() {
+        return lastTurnGame;
+    }
+
+    public void setLastTurnGame(GameModel lastTurnGame) {
+        this.lastTurnGame = lastTurnGame;
+    }
+
     public boolean equals(String progressName) {
         return this.progressName.equals(progressName);
     }

@@ -36,22 +36,7 @@ public class ProgramModel {
         return addNewProgressReturnValue;
     }
 
-    public EndProgressReturnValue endProgress(ProgressModel progress) {
-        EndProgressReturnValue endProgressReturnValue = new EndProgressReturnValue(liveProgresses.contains(progress));
-        if (liveProgresses.contains(progress)) {
-            liveProgresses.remove(progress);
-        }
-//        if (progress.whoWon() == PlayerType.PLAYER1) {
-//            //TODO add me
-//            progress.getPlayer1().win();
-//            progress.getPlayer2().lose();
-//        } else {
-//            progress.getPlayer2().win();
-//            progress.getPlayer1().lose();
-//        }
-        return endProgressReturnValue;
-    }
-
+    //TODO not belong to Model
     public String showProgresses() {
         StringBuilder ans = new StringBuilder();
         for (ProgressModel progress : liveProgresses) {
@@ -81,6 +66,15 @@ public class ProgramModel {
             return false;
         }
         return true;
+    }
+
+    public boolean isProgressFinished () {
+        return  runningProgress.getCurTurnGame().isGameFinished();
+    }
+
+    public void endProgress() {
+        liveProgresses.remove(runningProgress);
+        quitProgress();
     }
 
     public void quitProgress() {

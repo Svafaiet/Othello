@@ -28,8 +28,9 @@ public class PlayerModel implements Comparable<PlayerModel> {
         return name;
     }
 
+    //TODO not belong to Model
     public String showInformation(){
-        return name + totalGames + totalWins;
+        return (name + " " + totalGames + " " + totalWins);
     }
 
     @Override
