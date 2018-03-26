@@ -5,7 +5,7 @@ public class PlayerModel implements Comparable<PlayerModel> {
     private int totalGames;
     private int totalWins;
 
-    PlayerModel (String name) {
+    PlayerModel(String name) {
         this.name = name;
         totalGames = 0;
         //TODO maybe this needs to be 0
@@ -16,6 +16,7 @@ public class PlayerModel implements Comparable<PlayerModel> {
         totalWins += 1;
         totalGames += 1;
     }
+
     public void lose() {
         totalGames += 1;
     }
@@ -29,20 +30,20 @@ public class PlayerModel implements Comparable<PlayerModel> {
     }
 
     //TODO not belong to Model
-    public String showInformation(){
+    public String showInformation() {
         return (name + " " + totalGames + " " + totalWins);
     }
 
     @Override
     public int compareTo(PlayerModel anotherPlayer) {
-        if(anotherPlayer.totalWins > totalWins) {
+        if (anotherPlayer.totalWins > totalWins) {
             return -1;
         } else if (anotherPlayer.totalWins < totalWins) {
             return 1;
         } else {
-            if(anotherPlayer.totalGames > totalGames) {
+            if (anotherPlayer.totalGames > totalGames) {
                 return 1;
-            } else if(anotherPlayer.totalGames < totalGames){
+            } else if (anotherPlayer.totalGames < totalGames) {
                 return -1;
             } else {
                 return this.name.compareTo(anotherPlayer.name);

@@ -46,7 +46,7 @@ public class ProgressModel {
         return this.progressName.equals(progressName);
     }
 
-    public String toString(){
+    public String toString() {
         return progressName + " " + player1 + " " + player2;
         //TODO maybe a change is needed
     }

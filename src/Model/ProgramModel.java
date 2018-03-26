@@ -54,7 +54,7 @@ public class ProgramModel {
         return null;
     }
 
-    public LoadProgressReturnValue loadProgress (String progressName) {
+    public LoadProgressReturnValue loadProgress(String progressName) {
         LoadProgressReturnValue loadProgressReturnValue =
                 new LoadProgressReturnValue(findProgressByName(progressName) != null, isAnyProgressRunning());
         runningProgress = findProgressByName(progressName);
@@ -68,8 +68,8 @@ public class ProgramModel {
         return true;
     }
 
-    public boolean isProgressFinished () {
-        return  runningProgress.getCurTurnGame().isGameFinished();
+    public boolean isProgressFinished() {
+        return runningProgress.getCurTurnGame().isGameFinished();
     }
 
     public void endProgress() {
