@@ -2,18 +2,19 @@ package Model;
 
 import java.util.ArrayList;
 
-public class OthelloModel {
-    private OthelloModel() {
-        progresss = new ArrayList<>();
+public class ProgramModel {
+    private ProgramModel() {
+        liveProgresses = new ArrayList<>();
         runningProgress = null;
     }
 
-    public static OthelloModel getInstance() {
-        return new OthelloModel();
+    public static ProgramModel getInstance() {
+        return new ProgramModel();
     }
 
-    private ArrayList<ProgressModel> progresss;
+    private ArrayList<ProgressModel> liveProgresses;
     private ArrayList<PlayerModel> players;
+    private ProgressModel runningProgress;
 
     public AddNewPlayerReturnValue addNewPlayer(PlayerModel player) {
         AddNewPlayerReturnValue addNewPlayerReturnValue = new AddNewPlayerReturnValue(players.contains(player));
@@ -25,10 +26,10 @@ public class OthelloModel {
 
     public AddNewProgressReturnValue addNewProgress(ProgressModel progress) {
         AddNewProgressReturnValue addNewProgressReturnValue = new AddNewProgressReturnValue();
-        addNewProgressReturnValue.setProgressStatus(progresss.contains(progress));
+        addNewProgressReturnValue.setProgressStatus(liveProgresses.contains(progress));
         addNewProgressReturnValue.setPlayerStatus(players.contains(progress.getPlayer1()) && players.contains(progress.getPlayer2()));
         if (addNewProgressReturnValue.isRequestValid()) {
-            progresss.add(progress);
+            liveProgresses.add(progress);
             players.add(progress.getPlayer1());
             players.add(progress.getPlayer2());
         }
@@ -36,9 +37,9 @@ public class OthelloModel {
     }
 
     public EndProgressReturnValue endProgress(ProgressModel progress) {
-        EndProgressReturnValue endProgressReturnValue = new EndProgressReturnValue(progresss.contains(progress) || runningProgress.equals(progress));
-        if (progresss.contains(progress)) {
-            progresss.remove(progress);
+        EndProgressReturnValue endProgressReturnValue = new EndProgressReturnValue(liveProgresses.contains(progress));
+        if (liveProgresses.contains(progress)) {
+            liveProgresses.remove(progress);
         }
 //        if (progress.whoWon() == PlayerType.PLAYER1) {
 //            //TODO add me
@@ -51,8 +52,16 @@ public class OthelloModel {
         return endProgressReturnValue;
     }
 
-    public ProgressModel findProgressByName(String progressName) {
-        for (ProgressModel progress : progresss) {
+    public String showProgresses() {
+        StringBuilder ans = new StringBuilder();
+        for (ProgressModel progress : liveProgresses) {
+            ans.append(progress).append("\n");
+        }
+        return ans.toString();
+    }
+
+    private ProgressModel findProgressByName(String progressName) {
+        for (ProgressModel progress : liveProgresses) {
             if (progress.equals(progressName)) {
                 return progress;
             }
@@ -60,9 +69,14 @@ public class OthelloModel {
         return null;
     }
 
-    private ProgressModel runningProgress;
+    public LoadProgressReturnValue loadProgress (String progressName) {
+        LoadProgressReturnValue loadProgressReturnValue =
+                new LoadProgressReturnValue(findProgressByName(progressName) != null, isAnyProgressRunning());
+        runningProgress = findProgressByName(progressName);
+        return loadProgressReturnValue;
+    }
 
-    public boolean isAnyProgressRunning() {
+    private boolean isAnyProgressRunning() {
         if (runningProgress == null) {
             return false;
         }
@@ -108,7 +122,7 @@ class EndProgressReturnValue {
         return hasProgress;
     }
 
-    EndProgressReturnValue(boolean hasProgress) {
+    public EndProgressReturnValue(boolean hasProgress) {
         this.hasProgress = hasProgress;
     }
 }
@@ -120,7 +134,25 @@ class AddNewPlayerReturnValue {
         return hasPlayer;
     }
 
-    AddNewPlayerReturnValue(boolean hasPlayer) {
+    public AddNewPlayerReturnValue(boolean hasPlayer) {
         this.hasPlayer = hasPlayer;
+    }
+}
+
+class LoadProgressReturnValue {
+    private boolean hasGame;
+    private boolean anyGameRunning;
+
+    public boolean isAnyGameRunning() {
+        return anyGameRunning;
+    }
+
+    public boolean hasGame() {
+        return hasGame;
+    }
+
+    public LoadProgressReturnValue(boolean hasGame, boolean anyGameRunning) {
+        this.hasGame = hasGame;
+        this.anyGameRunning = anyGameRunning;
     }
 }

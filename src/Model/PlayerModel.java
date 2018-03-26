@@ -1,6 +1,6 @@
 package Model;
 
-public class PlayerModel {
+public class PlayerModel implements Comparable<PlayerModel> {
     private String name;
     private int totalGames;
     private int totalWins;
@@ -31,4 +31,22 @@ public class PlayerModel {
     public String showInformation(){
         return name + totalGames + totalWins;
     }
+
+    @Override
+    public int compareTo(PlayerModel anotherPlayer) {
+        if(anotherPlayer.totalWins > totalWins) {
+            return -1;
+        } else if (anotherPlayer.totalWins < totalWins) {
+            return 1;
+        } else {
+            if(anotherPlayer.totalGames > totalGames) {
+                return 1;
+            } else if(anotherPlayer.totalGames < totalGames){
+                return -1;
+            } else {
+                return this.name.compareTo(anotherPlayer.name);
+            }
+        }
+    }
+
 }

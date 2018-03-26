@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba5cab57-b4c0-495b-b543-cb3465baab4d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Model/OthelloGameLogic/Board.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/Model/GameLogic/Board.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Model/GameLogic/Cell.java" afterPath="$PROJECT_DIR$/src/Model/OthelloGameLogic/Cell.java" />
-      <change beforePath="$PROJECT_DIR$/src/Model/GameModel.java" afterPath="$PROJECT_DIR$/src/Model/ProgressModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/Model/OthelloModel.java" afterPath="$PROJECT_DIR$/src/Model/OthelloModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/Model/PlayerType.java" afterPath="$PROJECT_DIR$/src/Model/PlayerType.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/OthelloModel.java" afterPath="$PROJECT_DIR$/src/Model/ProgramModel.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/PlayerModel.java" afterPath="$PROJECT_DIR$/src/Model/PlayerModel.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,44 +16,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OthelloModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/OthelloModel.java">
+      <file leaf-file-name="ProgramModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/ProgramModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="42" column="42" lean-forward="true" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
+            <state relative-caret-position="68">
+              <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
               <folding>
-                <element signature="e#225#226#0" expanded="true" />
-                <element signature="e#266#267#0" expanded="true" />
-                <element signature="e#2443#2444#0" expanded="true" />
-                <element signature="e#2481#2482#0" expanded="true" />
-                <element signature="e#2620#2621#0" expanded="true" />
-                <element signature="e#2654#2655#0" expanded="true" />
-                <element signature="e#2712#2713#0" expanded="true" />
-                <element signature="e#2758#2759#0" expanded="true" />
-                <element signature="e#2792#2793#0" expanded="true" />
-                <element signature="e#2824#2825#0" expanded="true" />
-                <element signature="e#2878#2879#0" expanded="true" />
-                <element signature="e#2920#2921#0" expanded="true" />
-                <element signature="e#2959#2960#0" expanded="true" />
-                <element signature="e#3007#3008#0" expanded="true" />
-                <element signature="e#3110#3111#0" expanded="true" />
-                <element signature="e#3144#3145#0" expanded="true" />
-                <element signature="e#3195#3196#0" expanded="true" />
-                <element signature="e#3241#3242#0" expanded="true" />
-                <element signature="e#3341#3342#0" expanded="true" />
-                <element signature="e#3373#3374#0" expanded="true" />
-                <element signature="e#3423#3424#0" expanded="true" />
-                <element signature="e#3465#3466#0" expanded="true" />
+                <element signature="class#ProgramModel#0" expanded="false" />
+                <element signature="method#ProgramModel#0;class#ProgramModel#0" expanded="false" />
+                <element signature="method#addNewPlayer#0;class#ProgramModel#0" expanded="false" />
+                <element signature="method#addNewProgress#0;class#ProgramModel#0" expanded="false" />
+                <element signature="method#endProgress#0;class#ProgramModel#0" expanded="false" />
+                <element signature="e#1675#1731#0" expanded="false" />
+                <element signature="method#showProgresses#0;class#ProgramModel#0" expanded="false" />
+                <element signature="method#findProgressByName#0;class#ProgramModel#0" expanded="false" />
+                <element signature="method#loadProgress#0;class#ProgramModel#0" expanded="false" />
+                <element signature="method#isAnyProgressRunning#0;class#ProgramModel#0" expanded="false" />
+                <element signature="class#AddNewProgressReturnValue#0" expanded="false" />
+                <element signature="class#EndProgressReturnValue#0" expanded="false" />
+                <element signature="class#AddNewPlayerReturnValue#0" expanded="false" />
+                <element signature="class#LoadProgressReturnValue#0" expanded="false" />
+                <element signature="method#LoadProgressReturnValue#0;class#LoadProgressReturnValue#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameModel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProgressModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/ProgressModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+              <folding>
+                <element signature="method#toString#0;class#ProgressModel#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/GameModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            <state relative-caret-position="153">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -76,51 +77,25 @@
       <file leaf-file-name="PlayerModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/PlayerModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+            <state relative-caret-position="306">
+              <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
               <folding>
-                <element signature="e#378#379#0" expanded="true" />
-                <element signature="e#409#410#0" expanded="true" />
-                <element signature="e#451#452#0" expanded="true" />
-                <element signature="e#496#497#0" expanded="true" />
-                <element signature="e#528#529#0" expanded="true" />
-                <element signature="e#555#556#0" expanded="true" />
-                <element signature="e#593#594#0" expanded="true" />
-                <element signature="e#645#646#0" expanded="true" />
+                <element signature="method#PlayerModel#0;class#PlayerModel#0" expanded="false" />
+                <element signature="method#win#0;class#PlayerModel#0" expanded="false" />
+                <element signature="method#compareTo#0;class#PlayerModel#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProgressModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/ProgressModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-              <folding>
-                <element signature="e#404#405#0" expanded="true" />
-                <element signature="e#434#435#0" expanded="true" />
-                <element signature="e#485#486#0" expanded="true" />
-                <element signature="e#523#524#0" expanded="true" />
-                <element signature="e#562#563#0" expanded="true" />
-                <element signature="e#592#593#0" expanded="true" />
-                <element signature="e#643#644#0" expanded="true" />
-                <element signature="e#681#682#0" expanded="true" />
-                <element signature="e#731#732#0" expanded="true" />
-                <element signature="e#792#793#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/OthelloGameLogic/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+            <state relative-caret-position="136">
+              <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding>
-                <element signature="e#589#590#0" expanded="true" />
-                <element signature="e#623#624#0" expanded="true" />
+                <element signature="method#Board#0;class#Board#0" expanded="false" />
+                <element signature="method#clone#0;class#Board#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -150,6 +125,7 @@
     <findStrings>
       <find>game</find>
       <find>Game</find>
+      <find>runningProgress</find>
     </findStrings>
     <replaceStrings>
       <replace>progress</replace>
@@ -172,14 +148,16 @@
         <option value="$PROJECT_DIR$/src/Model/Game.java" />
         <option value="$PROJECT_DIR$/src/Model/Othello.java" />
         <option value="$PROJECT_DIR$/src/Model/AddNewPlayerReturnValue.java" />
-        <option value="$PROJECT_DIR$/src/Model/PlayerModel.java" />
         <option value="$PROJECT_DIR$/src/Model/Turn.java" />
         <option value="$PROJECT_DIR$/src/Model/GameLogic/Cell.java" />
-        <option value="$PROJECT_DIR$/src/Model/OthelloModel.java" />
         <option value="$PROJECT_DIR$/src/Model/PlayerType.java" />
         <option value="$PROJECT_DIR$/src/Model/GameLogic/Board.java" />
         <option value="$PROJECT_DIR$/src/Model/ProgressModel.java" />
         <option value="$PROJECT_DIR$/src/Model/GameModel.java" />
+        <option value="$PROJECT_DIR$/src/Model/PlayerModel.java" />
+        <option value="$PROJECT_DIR$/src/Model/OthelloModel.java" />
+        <option value="$PROJECT_DIR$/src/Model/ProgramModel.java" />
+        <option value="$PROJECT_DIR$/src/Model/OthelloGameLogic/Board.java" />
       </list>
     </option>
   </component>
@@ -376,12 +354,12 @@
       <option name="presentableId" value="Default" />
       <updated>1521983062093</updated>
       <workItem from="1521983064065" duration="2854000" />
-      <workItem from="1521986223829" duration="9383000" />
+      <workItem from="1521986223829" duration="13015000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12237000" />
+    <option name="totallyTimeSpent" value="15869000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="40" width="1346" height="688" extended-state="0" />
@@ -422,37 +400,32 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Model/OthelloModel.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/ProgramModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#225#226#0" expanded="true" />
-            <element signature="e#266#267#0" expanded="true" />
-            <element signature="e#2443#2444#0" expanded="true" />
-            <element signature="e#2481#2482#0" expanded="true" />
-            <element signature="e#2620#2621#0" expanded="true" />
-            <element signature="e#2654#2655#0" expanded="true" />
-            <element signature="e#2712#2713#0" expanded="true" />
-            <element signature="e#2758#2759#0" expanded="true" />
-            <element signature="e#2792#2793#0" expanded="true" />
-            <element signature="e#2824#2825#0" expanded="true" />
-            <element signature="e#2878#2879#0" expanded="true" />
-            <element signature="e#2920#2921#0" expanded="true" />
-            <element signature="e#2959#2960#0" expanded="true" />
-            <element signature="e#3007#3008#0" expanded="true" />
-            <element signature="e#3110#3111#0" expanded="true" />
-            <element signature="e#3144#3145#0" expanded="true" />
-            <element signature="e#3195#3196#0" expanded="true" />
-            <element signature="e#3241#3242#0" expanded="true" />
-            <element signature="e#3341#3342#0" expanded="true" />
-            <element signature="e#3373#3374#0" expanded="true" />
-            <element signature="e#3423#3424#0" expanded="true" />
-            <element signature="e#3465#3466#0" expanded="true" />
+            <element signature="class#ProgramModel#0" expanded="false" />
+            <element signature="method#ProgramModel#0;class#ProgramModel#0" expanded="false" />
+            <element signature="method#addNewPlayer#0;class#ProgramModel#0" expanded="false" />
+            <element signature="method#addNewProgress#0;class#ProgramModel#0" expanded="false" />
+            <element signature="method#endProgress#0;class#ProgramModel#0" expanded="false" />
+            <element signature="e#1675#1731#0" expanded="false" />
+            <element signature="method#showProgresses#0;class#ProgramModel#0" expanded="false" />
+            <element signature="method#findProgressByName#0;class#ProgramModel#0" expanded="false" />
+            <element signature="method#loadProgress#0;class#ProgramModel#0" expanded="false" />
+            <element signature="method#isAnyProgressRunning#0;class#ProgramModel#0" expanded="false" />
+            <element signature="class#AddNewProgressReturnValue#0" expanded="false" />
+            <element signature="class#EndProgressReturnValue#0" expanded="false" />
+            <element signature="class#AddNewPlayerReturnValue#0" expanded="false" />
+            <element signature="class#LoadProgressReturnValue#0" expanded="false" />
+            <element signature="method#LoadProgressReturnValue#0;class#LoadProgressReturnValue#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -462,16 +435,7 @@
         <state relative-caret-position="170">
           <caret line="11" column="46" lean-forward="false" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
           <folding>
-            <element signature="e#404#405#0" expanded="true" />
-            <element signature="e#434#435#0" expanded="true" />
-            <element signature="e#485#486#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#562#563#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#643#644#0" expanded="true" />
-            <element signature="e#681#682#0" expanded="true" />
-            <element signature="e#731#732#0" expanded="true" />
-            <element signature="e#792#793#0" expanded="true" />
+            <element signature="method#toString#0;class#ProgressModel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -481,14 +445,9 @@
         <state relative-caret-position="85">
           <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
           <folding>
-            <element signature="e#378#379#0" expanded="true" />
-            <element signature="e#409#410#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
-            <element signature="e#528#529#0" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
-            <element signature="e#593#594#0" expanded="true" />
-            <element signature="e#645#646#0" expanded="true" />
+            <element signature="method#PlayerModel#0;class#PlayerModel#0" expanded="false" />
+            <element signature="method#win#0;class#PlayerModel#0" expanded="false" />
+            <element signature="method#compareTo#0;class#PlayerModel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -509,11 +468,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/PlayerType.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/Comparable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="28" lean-forward="false" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/AbstractStringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="454" column="33" lean-forward="false" selection-start-line="454" selection-start-column="33" selection-end-line="454" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/StringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="159" column="18" lean-forward="false" selection-start-line="159" selection-start-column="18" selection-end-line="159" selection-end-column="18" />
+          <folding>
+            <element signature="e#2871#2872#0" expanded="false" />
+            <element signature="e#2896#2897#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/ProgramModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+          <folding>
+            <element signature="class#ProgramModel#0" expanded="false" />
+            <element signature="method#ProgramModel#0;class#ProgramModel#0" expanded="false" />
+            <element signature="method#addNewPlayer#0;class#ProgramModel#0" expanded="false" />
+            <element signature="method#addNewProgress#0;class#ProgramModel#0" expanded="false" />
+            <element signature="method#endProgress#0;class#ProgramModel#0" expanded="false" />
+            <element signature="e#1675#1731#0" expanded="false" />
+            <element signature="method#showProgresses#0;class#ProgramModel#0" expanded="false" />
+            <element signature="method#findProgressByName#0;class#ProgramModel#0" expanded="false" />
+            <element signature="method#loadProgress#0;class#ProgramModel#0" expanded="false" />
+            <element signature="method#isAnyProgressRunning#0;class#ProgramModel#0" expanded="false" />
+            <element signature="class#AddNewProgressReturnValue#0" expanded="false" />
+            <element signature="class#EndProgressReturnValue#0" expanded="false" />
+            <element signature="class#AddNewPlayerReturnValue#0" expanded="false" />
+            <element signature="class#LoadProgressReturnValue#0" expanded="false" />
+            <element signature="method#LoadProgressReturnValue#0;class#LoadProgressReturnValue#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -522,64 +524,27 @@
         <state relative-caret-position="170">
           <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
           <folding>
-            <element signature="e#404#405#0" expanded="true" />
-            <element signature="e#434#435#0" expanded="true" />
-            <element signature="e#485#486#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#562#563#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#643#644#0" expanded="true" />
-            <element signature="e#681#682#0" expanded="true" />
-            <element signature="e#731#732#0" expanded="true" />
-            <element signature="e#792#793#0" expanded="true" />
+            <element signature="method#toString#0;class#ProgressModel#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/PlayerType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="28" lean-forward="false" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/PlayerModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        <state relative-caret-position="306">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
           <folding>
-            <element signature="e#378#379#0" expanded="true" />
-            <element signature="e#409#410#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
-            <element signature="e#528#529#0" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
-            <element signature="e#593#594#0" expanded="true" />
-            <element signature="e#645#646#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/OthelloModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="42" column="42" lean-forward="true" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
-          <folding>
-            <element signature="e#225#226#0" expanded="true" />
-            <element signature="e#266#267#0" expanded="true" />
-            <element signature="e#2443#2444#0" expanded="true" />
-            <element signature="e#2481#2482#0" expanded="true" />
-            <element signature="e#2620#2621#0" expanded="true" />
-            <element signature="e#2654#2655#0" expanded="true" />
-            <element signature="e#2712#2713#0" expanded="true" />
-            <element signature="e#2758#2759#0" expanded="true" />
-            <element signature="e#2792#2793#0" expanded="true" />
-            <element signature="e#2824#2825#0" expanded="true" />
-            <element signature="e#2878#2879#0" expanded="true" />
-            <element signature="e#2920#2921#0" expanded="true" />
-            <element signature="e#2959#2960#0" expanded="true" />
-            <element signature="e#3007#3008#0" expanded="true" />
-            <element signature="e#3110#3111#0" expanded="true" />
-            <element signature="e#3144#3145#0" expanded="true" />
-            <element signature="e#3195#3196#0" expanded="true" />
-            <element signature="e#3241#3242#0" expanded="true" />
-            <element signature="e#3341#3342#0" expanded="true" />
-            <element signature="e#3373#3374#0" expanded="true" />
-            <element signature="e#3423#3424#0" expanded="true" />
-            <element signature="e#3465#3466#0" expanded="true" />
+            <element signature="method#PlayerModel#0;class#PlayerModel#0" expanded="false" />
+            <element signature="method#win#0;class#PlayerModel#0" expanded="false" />
+            <element signature="method#compareTo#0;class#PlayerModel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -592,22 +557,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/OthelloGameLogic/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/GameModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding>
-            <element signature="e#589#590#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/GameModel.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/OthelloGameLogic/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="136">
+          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="method#Board#0;class#Board#0" expanded="false" />
+            <element signature="method#clone#0;class#Board#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
