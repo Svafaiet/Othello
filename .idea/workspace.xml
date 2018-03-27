@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba5cab57-b4c0-495b-b543-cb3465baab4d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Model/OthelloGameLogic/OthelloModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/Model/GameModel.java" afterPath="$PROJECT_DIR$/src/Model/GameModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/Model/OthelloGameLogic/Board.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Model/OthelloGameLogic/Cell.java" afterPath="$PROJECT_DIR$/src/Model/OthelloGameLogic/Cell.java" />
-      <change beforePath="$PROJECT_DIR$/src/Model/PlayerModel.java" afterPath="$PROJECT_DIR$/src/Model/PlayerModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ProgramModel.java" afterPath="$PROJECT_DIR$/src/Model/ProgramModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ProgressModel.java" afterPath="$PROJECT_DIR$/src/Model/ProgressModel.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/OthelloGameLogic/OthelloModel.java" afterPath="$PROJECT_DIR$/src/Model/OthelloGameLogic/OthelloModel.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,66 +14,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProgramModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/ProgramModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="76" column="23" lean-forward="false" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
-              <folding>
-                <element signature="method#ProgramModel#0;class#ProgramModel#0" expanded="false" />
-                <element signature="method#addNewPlayer#0;class#ProgramModel#0" expanded="false" />
-                <element signature="method#addNewProgress#0;class#ProgramModel#0" expanded="false" />
-                <element signature="method#findProgressByName#0;class#ProgramModel#0" expanded="false" />
-                <element signature="method#loadProgress#0;class#ProgramModel#0" expanded="false" />
-                <element signature="method#isAnyProgressRunning#0;class#ProgramModel#0" expanded="false" />
-                <element signature="e#2441#2442#0" expanded="true" />
-                <element signature="e#2513#2514#0" expanded="true" />
-                <element signature="class#AddNewProgressReturnValue#0" expanded="false" />
-                <element signature="class#EndProgressReturnValue#0" expanded="false" />
-                <element signature="class#AddNewPlayerReturnValue#0" expanded="false" />
-                <element signature="class#LoadProgressReturnValue#0" expanded="false" />
-                <element signature="method#LoadProgressReturnValue#0;class#LoadProgressReturnValue#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProgressModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/ProgressModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-              <folding>
-                <element signature="e#722#723#0" expanded="true" />
-                <element signature="e#756#757#0" expanded="true" />
-                <element signature="e#813#814#0" expanded="true" />
-                <element signature="e#859#860#0" expanded="true" />
-                <element signature="e#901#902#0" expanded="true" />
-                <element signature="e#936#937#0" expanded="true" />
-                <element signature="e#995#996#0" expanded="true" />
-                <element signature="e#1043#1044#0" expanded="true" />
-                <element signature="method#toString#0;class#ProgressModel#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/PlayerModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-              <folding>
-                <element signature="method#PlayerModel#0;class#PlayerModel#0" expanded="false" />
-                <element signature="method#win#0;class#PlayerModel#0" expanded="false" />
-                <element signature="e#660#661#0" expanded="true" />
-                <element signature="e#726#727#0" expanded="true" />
-                <element signature="method#compareTo#0;class#PlayerModel#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GameModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/GameModel.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -93,14 +27,19 @@
       <file leaf-file-name="OthelloModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/OthelloGameLogic/OthelloModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="98" column="20" lean-forward="false" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
+            <state relative-caret-position="247">
+              <caret line="104" column="4" lean-forward="true" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="4" />
               <folding>
                 <element signature="method#clone#0;class#OthelloModel#0" expanded="false" />
+                <element signature="method#setTaw#0;class#OthelloModel#0" expanded="false" />
                 <element signature="method#isCellOpposite#0;class#OthelloModel#0" expanded="false" />
                 <element signature="method#isCellSame#0;class#OthelloModel#0" expanded="false" />
                 <element signature="method#isMoveValid#0;class#OthelloModel#0" expanded="false" />
-                <marker date="1522096902132" expanded="false" signature="500:954" ph="{...}" />
+                <element signature="method#reverseTaw#0;class#OthelloModel#0" expanded="false" />
+                <element signature="method#isGameFinished#0;class#OthelloModel#0" expanded="false" />
+                <element signature="method#whoWon#0;class#OthelloModel#0" expanded="false" />
+                <element signature="class#SetTawReturnValue#0" expanded="false" />
+                <marker date="1522142724758" expanded="false" signature="500:954" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -147,8 +86,8 @@
       <file leaf-file-name="OthelloMoveModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/OthelloGameLogic/OthelloMoveModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+            <state relative-caret-position="340">
+              <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
               <folding>
                 <element signature="method#OthelloMoveModel#0;class#OthelloMoveModel#0" expanded="false" />
                 <element signature="method#OthelloMoveModel#2;class#OthelloMoveModel#0" expanded="false" />
@@ -218,9 +157,9 @@
         <option value="$PROJECT_DIR$/src/Model/ProgramModel.java" />
         <option value="$PROJECT_DIR$/src/Model/OthelloGameLogic/Direction.java" />
         <option value="$PROJECT_DIR$/src/Model/MoveModel.java" />
-        <option value="$PROJECT_DIR$/src/Model/OthelloGameLogic/OthelloMoveModel.java" />
         <option value="$PROJECT_DIR$/src/Model/OthelloGameLogic/Board.java" />
         <option value="$PROJECT_DIR$/src/Model/OthelloGameLogic/Cell.java" />
+        <option value="$PROJECT_DIR$/src/Model/OthelloGameLogic/OthelloMoveModel.java" />
         <option value="$PROJECT_DIR$/src/Model/OthelloGameLogic/OthelloModel.java" />
       </list>
     </option>
@@ -231,7 +170,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="40" />
     <option name="width" value="1345" />
     <option name="height" value="688" />
@@ -283,6 +222,14 @@
               <item name="Model" type="462c0819:PsiDirectoryNode" />
               <item name="OthelloGameLogic" type="462c0819:PsiDirectoryNode" />
               <item name="Cell.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="Othello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Othello" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="OthelloGameLogic" type="462c0819:PsiDirectoryNode" />
+              <item name="OthelloModel.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </path>
           </expand>
           <select />
@@ -426,15 +373,15 @@
       <option name="presentableId" value="Default" />
       <updated>1521983062093</updated>
       <workItem from="1521983064065" duration="2854000" />
-      <workItem from="1521986223829" duration="23881000" />
+      <workItem from="1521986223829" duration="26780000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26735000" />
+    <option name="totallyTimeSpent" value="29634000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="40" width="1345" height="688" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -449,7 +396,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869565" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2565839" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869565" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -473,7 +420,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -583,6 +530,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/OthelloGameLogic/Pair.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding>
+            <element signature="e#114#115#0" expanded="true" />
+            <element signature="e#138#139#0" expanded="true" />
+            <element signature="e#187#188#0" expanded="true" />
+            <element signature="e#314#315#0" expanded="true" />
+            <element signature="e#375#376#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/OthelloGameLogic/Direction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="29" column="14" lean-forward="false" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+          <folding>
+            <element signature="initializer##0;class#Direction#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/OthelloGameLogic/Cell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/PlayerModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+          <folding>
+            <element signature="method#PlayerModel#0;class#PlayerModel#0" expanded="false" />
+            <element signature="method#win#0;class#PlayerModel#0" expanded="false" />
+            <element signature="e#660#661#0" expanded="true" />
+            <element signature="e#726#727#0" expanded="true" />
+            <element signature="method#compareTo#0;class#PlayerModel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/ProgressModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -597,20 +590,6 @@
             <element signature="e#995#996#0" expanded="true" />
             <element signature="e#1043#1044#0" expanded="true" />
             <element signature="method#toString#0;class#ProgressModel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/PlayerModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-          <folding>
-            <element signature="method#PlayerModel#0;class#PlayerModel#0" expanded="false" />
-            <element signature="method#win#0;class#PlayerModel#0" expanded="false" />
-            <element signature="e#660#661#0" expanded="true" />
-            <element signature="e#726#727#0" expanded="true" />
-            <element signature="method#compareTo#0;class#PlayerModel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -637,6 +616,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/GameModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="56" lean-forward="false" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/MoveModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -645,34 +632,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/OthelloGameLogic/Pair.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding>
-            <element signature="e#114#115#0" expanded="true" />
-            <element signature="e#138#139#0" expanded="true" />
-            <element signature="e#187#188#0" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#375#376#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/OthelloGameLogic/Direction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="29" column="14" lean-forward="false" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
-          <folding>
-            <element signature="initializer##0;class#Direction#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/OthelloGameLogic/OthelloMoveModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+        <state relative-caret-position="340">
+          <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
           <folding>
             <element signature="method#OthelloMoveModel#0;class#OthelloMoveModel#0" expanded="false" />
             <element signature="method#OthelloMoveModel#2;class#OthelloMoveModel#0" expanded="false" />
@@ -682,32 +645,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/GameModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="56" lean-forward="false" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/OthelloGameLogic/Cell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/OthelloGameLogic/OthelloModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="98" column="20" lean-forward="false" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
+        <state relative-caret-position="247">
+          <caret line="104" column="4" lean-forward="true" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="4" />
           <folding>
             <element signature="method#clone#0;class#OthelloModel#0" expanded="false" />
+            <element signature="method#setTaw#0;class#OthelloModel#0" expanded="false" />
             <element signature="method#isCellOpposite#0;class#OthelloModel#0" expanded="false" />
             <element signature="method#isCellSame#0;class#OthelloModel#0" expanded="false" />
             <element signature="method#isMoveValid#0;class#OthelloModel#0" expanded="false" />
-            <marker date="1522096902132" expanded="false" signature="500:954" ph="{...}" />
+            <element signature="method#reverseTaw#0;class#OthelloModel#0" expanded="false" />
+            <element signature="method#isGameFinished#0;class#OthelloModel#0" expanded="false" />
+            <element signature="method#whoWon#0;class#OthelloModel#0" expanded="false" />
+            <element signature="class#SetTawReturnValue#0" expanded="false" />
+            <marker date="1522142724758" expanded="false" signature="500:954" ph="{...}" />
           </folding>
         </state>
       </provider>
