@@ -10,14 +10,9 @@ public class OthelloMoveModel extends MoveModel {
     public OthelloMoveModel(){
     }
 
-    public OthelloMoveModel(PlayerType playerType){
-        this.playerType = playerType;
-    }
-
-    public OthelloMoveModel(PlayerType playerType, int x, int y) {
+    public OthelloMoveModel(int x, int y) {
         this.x = x;
         this.y = y;
-        this.playerType = playerType;
     }
 
     public int getX() {
@@ -28,7 +23,4 @@ public class OthelloMoveModel extends MoveModel {
         return y;
     }
 
-    public PlayerType getPlayerType() {
-        return playerType;
-    }
 }

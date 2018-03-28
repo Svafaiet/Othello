@@ -17,8 +17,10 @@ public class OthelloModel extends GameModel {
     }
 
     private Cell[][] cells;
+    private PlayerType playerTurn = PlayerType.PLAYER1;
+    private boolean isGameFinished = false;
 
-    OthelloModel() {
+    public OthelloModel() {
         cells = new Cell[RANGE][RANGE];
         for (int i = 0; i < RANGE; i++) {
             for (int j = 0; j < RANGE; j++) {
@@ -61,18 +63,32 @@ public class OthelloModel extends GameModel {
         return setTaw(point.getX(), point.getY(), cell);
     }
 
-    private boolean isCellOpposite(Pair point, OthelloMoveModel othelloMove) {
+    private boolean isCellOpposite(Pair point) {
         if (!isInRange(point)) {
             return false;
         }
-        return (at(point) == CellFunctions.oppositeCellType(othelloMove.getPlayerType()));
+        return (at(point) == CellFunctions.oppositeCellType(playerTurn));
     }
 
-    private boolean isCellSame(Pair point, OthelloMoveModel othelloMove) {
+    private boolean isCellSame(Pair point) {
         if (!isInRange(point)) {
             return false;
         }
-        return (at(point) == CellFunctions.cellType(othelloMove.getPlayerType()));
+        return (at(point) == CellFunctions.cellType(playerTurn));
+    }
+
+    private void passTurn() {
+        switch (playerTurn) {
+            case NO_ONE:
+                playerTurn = PlayerType.NO_ONE;
+                break;
+            case PLAYER2:
+                playerTurn = PlayerType.PLAYER1;
+                break;
+            case PLAYER1:
+                playerTurn = PlayerType.PLAYER2;
+                break;
+        }
     }
 
     public boolean isMoveValid(MoveModel move) {
@@ -86,9 +102,9 @@ public class OthelloModel extends GameModel {
             return false;
         }
         for (Pair dir : Direction.ALL_DIRECTIONS) {
-            if (isCellOpposite(Direction.moveInDirection(dir, point, 1), othelloMove)) {
+            if (isCellOpposite(Direction.moveInDirection(dir, point, 1))) {
                 for (int i = 2; i < 6; i++) {
-                    if (isCellSame(Direction.moveInDirection(dir, point, i), othelloMove)) {
+                    if (isCellSame(Direction.moveInDirection(dir, point, i))) {
                         return true;
                     }
                 }
@@ -96,6 +112,21 @@ public class OthelloModel extends GameModel {
         }
         return false;
 
+    }
+
+    private boolean canPlayerMove() {
+        for (int i = 0; i < RANGE; i++) {
+            for (int j = 0; j < RANGE; j++) {
+                if(isMoveValid(new OthelloMoveModel(i, j))) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public PlayerType getPlayerTurn() {
+        return playerTurn;
     }
 
     private void reverseTaw(Pair point) {
@@ -106,7 +137,7 @@ public class OthelloModel extends GameModel {
         int distance = 1;
         while (isInRange(point) &&
                 (at(Direction.moveInDirection(dir, point, distance)) ==
-                        CellFunctions.oppositeCellType(othelloMove.getPlayerType()))) {
+                        CellFunctions.oppositeCellType(playerTurn))) {
             reverseTaw(Direction.moveInDirection(dir, point, distance));
             distance++;
         }
@@ -122,8 +153,15 @@ public class OthelloModel extends GameModel {
         OthelloMoveModel othelloMove = (OthelloMoveModel) move;
         Pair point = new Pair(othelloMove.getX(), othelloMove.getY());
         if (isMoveValid(move)) {
-            setTaw(point, CellFunctions.cellType(othelloMove.getPlayerType()));
+            setTaw(point, CellFunctions.cellType(playerTurn));
             reverseTawsInDirections(point, othelloMove);
+            passTurn();
+            if (!canPlayerMove()) {
+                passTurn();
+                if (!canPlayerMove()) {
+                    isGameFinished = true;
+                }
+            }
             return new PutTawReturnValue(true);
         } else {
             return new PutTawReturnValue(false);
@@ -131,17 +169,7 @@ public class OthelloModel extends GameModel {
     }
 
     public boolean isGameFinished() {
-        for (int i = 0; i < RANGE; i++) {
-            for (int j = 0; j < RANGE; j++) {
-                if (isMoveValid(new OthelloMoveModel(PlayerType.PLAYER1, i, j))) {
-                    return false;
-                }
-                if (isMoveValid(new OthelloMoveModel(PlayerType.PLAYER2, i, j))) {
-                    return false;
-                }
-            }
-        }
-        return true;
+        return isGameFinished;
     }
 
     public PlayerType whoWon() {
