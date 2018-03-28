@@ -36,9 +36,10 @@ public class OthelloModel extends GameModel {
     @Override
     public OthelloModel clone() {
         OthelloModel newOthelloModel = new OthelloModel();
-        for (int i = 0; i < 6; i++) {
-            System.arraycopy(cells[i], 0, newOthelloModel.cells[i], 0, 6);
+        for (int i = 0; i < RANGE; i++) {
+            System.arraycopy(cells[i], 0, newOthelloModel.cells[i], 0, RANGE);
         }
+        newOthelloModel.playerTurn = playerTurn;
         return newOthelloModel;
     }
 
@@ -117,7 +118,7 @@ public class OthelloModel extends GameModel {
     private boolean canPlayerMove() {
         for (int i = 0; i < RANGE; i++) {
             for (int j = 0; j < RANGE; j++) {
-                if(isMoveValid(new OthelloMoveModel(i, j))) {
+                if (isMoveValid(new OthelloMoveModel(i, j))) {
                     return true;
                 }
             }
@@ -149,23 +150,24 @@ public class OthelloModel extends GameModel {
         }
     }
 
-    public PutTawReturnValue putTawInPoint(MoveModel move) {
+    public void putTawInPoint(MoveModel move) {
         OthelloMoveModel othelloMove = (OthelloMoveModel) move;
         Pair point = new Pair(othelloMove.getX(), othelloMove.getY());
-        if (isMoveValid(move)) {
-            setTaw(point, CellFunctions.cellType(playerTurn));
-            reverseTawsInDirections(point, othelloMove);
+        setTaw(point, CellFunctions.cellType(playerTurn));
+        reverseTawsInDirections(point, othelloMove);
+        passTurn();
+        if (!canPlayerMove()) {
             passTurn();
             if (!canPlayerMove()) {
-                passTurn();
-                if (!canPlayerMove()) {
-                    isGameFinished = true;
-                }
+                isGameFinished = true;
             }
-            return new PutTawReturnValue(true);
-        } else {
-            return new PutTawReturnValue(false);
         }
+
+    }
+
+    @Override
+    public void makeMove(MoveModel move) {
+        putTawInPoint(move);
     }
 
     public boolean isGameFinished() {
@@ -199,20 +201,4 @@ public class OthelloModel extends GameModel {
     }
 
 
-}
-
-class PutTawReturnValue {
-    private boolean isValid = true;
-
-    PutTawReturnValue(boolean isValid) {
-        this.isValid = isValid;
-    }
-
-    public void setValid(boolean valid) {
-        isValid = valid;
-    }
-
-    public boolean isValid() {
-        return isValid;
-    }
 }

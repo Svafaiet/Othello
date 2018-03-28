@@ -1,54 +1,26 @@
 package Model;
 
-public class PlayerModel implements Comparable<PlayerModel> {
-    private String name;
-    private int totalGames;
-    private int totalWins;
+public class PlayerModel {
+    private static final int UNDO_COUNT = 3;
+    private String playerName;
+    private int undoRemainingCount;
 
-    PlayerModel(String name) {
-        this.name = name;
-        totalGames = 0;
-        //TODO maybe this needs to be 0
-        totalWins = 0;
+    PlayerModel (AccountModel accountModel) {
+        playerName = accountModel.getAccountName();
+        undoRemainingCount = UNDO_COUNT;
     }
 
-    public void win() {
-        totalWins += 1;
-        totalGames += 1;
+    public String getPlayerName() {
+        return playerName;
     }
 
-    public void lose() {
-        totalGames += 1;
+    public boolean isThereAnyUndo() {
+        return undoRemainingCount > 0;
     }
 
-    public boolean equals(String name) {
-        return this.name.equals(name);
-    }
-
-    public String toString() {
-        return name;
-    }
-
-    //TODO not belong to Model
-    public String showInformation() {
-        return (name + " " + totalGames + " " + totalWins);
-    }
-
-    @Override
-    public int compareTo(PlayerModel anotherPlayer) {
-        if (anotherPlayer.totalWins > totalWins) {
-            return -1;
-        } else if (anotherPlayer.totalWins < totalWins) {
-            return 1;
-        } else {
-            if (anotherPlayer.totalGames > totalGames) {
-                return 1;
-            } else if (anotherPlayer.totalGames < totalGames) {
-                return -1;
-            } else {
-                return this.name.compareTo(anotherPlayer.name);
-            }
+    public void useUndo() {
+        if(isThereAnyUndo()) {
+            undoRemainingCount--;
         }
     }
-
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ProgramModel {
     private ProgramModel() {
-        liveProgresses = new ArrayList<>();
+        notFinishedProgresses = new ArrayList<>();
         runningProgress = null;
     }
 
@@ -12,41 +12,45 @@ public class ProgramModel {
         return new ProgramModel();
     }
 
-    private ArrayList<ProgressModel> liveProgresses;
-    private ArrayList<PlayerModel> players;
+    private ArrayList<ProgressModel> notFinishedProgresses;
+    private ArrayList<AccountModel> acounts;
     private ProgressModel runningProgress;
 
-    public AddNewPlayerReturnValue addNewPlayer(PlayerModel player) {
-        AddNewPlayerReturnValue addNewPlayerReturnValue = new AddNewPlayerReturnValue(players.contains(player));
-        if (!players.contains(player)) {
-            players.add(player);
+    public AddNewPlayerReturnValue addNewPlayer(AccountModel player) {
+        AddNewPlayerReturnValue addNewPlayerReturnValue = new AddNewPlayerReturnValue(acounts.contains(player));
+        if (!acounts.contains(player)) {
+            acounts.add(player);
         }
         return addNewPlayerReturnValue;
     }
 
     public AddNewProgressReturnValue addNewProgress(ProgressModel progress) {
-        AddNewProgressReturnValue addNewProgressReturnValue = new AddNewProgressReturnValue();
-        addNewProgressReturnValue.setProgressStatus(liveProgresses.contains(progress));
-        addNewProgressReturnValue.setPlayerStatus(players.contains(progress.getPlayer1()) && players.contains(progress.getPlayer2()));
-        if (addNewProgressReturnValue.isRequestValid()) {
-            liveProgresses.add(progress);
-            players.add(progress.getPlayer1());
-            players.add(progress.getPlayer2());
+        AddNewProgressReturnValue addNewProgress = new AddNewProgressReturnValue();
+        addNewProgress.isProgressNew(notFinishedProgresses.contains(progress));
+        for (AccountModel player : progress.getPlayers()) {
+            if (!acounts.contains(player)) {
+                addNewProgress.arePlayersNew(false);
+                break;
+            }
         }
-        return addNewProgressReturnValue;
+        addNewProgress.arePlayersNew(true);
+        if (addNewProgress.isRequestValid()) {
+            notFinishedProgresses.add(progress);
+        }
+        return addNewProgress;
     }
 
     //TODO not belong to Model
-    public String showProgresses() {
-        StringBuilder ans = new StringBuilder();
-        for (ProgressModel progress : liveProgresses) {
-            ans.append(progress).append("\n");
-        }
-        return ans.toString();
+    public ArrayList<ProgressModel> getProgresses() {
+        return notFinishedProgresses;
+    }
+
+    public ArrayList<AccountModel> getAcounts() {
+        return acounts;
     }
 
     private ProgressModel findProgressByName(String progressName) {
-        for (ProgressModel progress : liveProgresses) {
+        for (ProgressModel progress : notFinishedProgresses) {
             if (progress.equals(progressName)) {
                 return progress;
             }
@@ -61,6 +65,8 @@ public class ProgramModel {
         return loadProgressReturnValue;
     }
 
+    public UndoReturnValue
+
     private boolean isAnyProgressRunning() {
         if (runningProgress == null) {
             return false;
@@ -73,7 +79,7 @@ public class ProgramModel {
     }
 
     public void endProgress() {
-        liveProgresses.remove(runningProgress);
+        notFinishedProgresses.remove(runningProgress);
         quitProgress();
     }
 
@@ -92,7 +98,7 @@ class AddNewProgressReturnValue {
         return hasProgress;
     }
 
-    public void setProgressStatus(boolean hasProgress) {
+    public void isProgressNew(boolean hasProgress) {
         this.hasProgress = hasProgress;
     }
 
@@ -100,7 +106,7 @@ class AddNewProgressReturnValue {
         return hasPlayer;
     }
 
-    public void setPlayerStatus(boolean hasPlayer) {
+    public void arePlayersNew(boolean hasPlayer) {
         this.hasPlayer = hasPlayer;
     }
 
@@ -148,5 +154,17 @@ class LoadProgressReturnValue {
     public LoadProgressReturnValue(boolean hasGame, boolean anyGameRunning) {
         this.hasGame = hasGame;
         this.anyGameRunning = anyGameRunning;
+    }
+}
+
+class UndoReturnValue {
+    private boolean canUndo = true;
+
+    public void canNotUndo() {
+        canUndo = false;
+    }
+
+    public boolean canUndo() {
+        return canUndo;
     }
 }

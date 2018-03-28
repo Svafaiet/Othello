@@ -1,53 +1,63 @@
 package Model;
 
+import java.util.ArrayList;
+
 public class ProgressModel {
     private String progressName;
-    private PlayerModel player1;
-    private PlayerModel player2;
-    private PlayerType turn;
+    private ArrayList<AccountModel> players;
     private boolean hasUndone;
     //with a little inheritance we can have this program for all kind of twoPlayerprogresss
     private GameModel curTurnGame;
     private GameModel lastTurnGame;
 
-    public PlayerModel getPlayer1() {
-        return player1;
-    }
-
-    public void setPlayer1(PlayerModel player1) {
-        this.player1 = player1;
-    }
-
-    public PlayerModel getPlayer2() {
-        return player2;
-    }
-
-    public void setPlayer2(PlayerModel player2) {
-        this.player2 = player2;
-    }
-
     public GameModel getCurTurnGame() {
         return curTurnGame;
     }
 
-    public void setCurTurnGame(GameModel curTurnGame) {
-        this.curTurnGame = curTurnGame;
+    public ArrayList<AccountModel> getPlayers() {
+        return players;
     }
 
-    public GameModel getLastTurnGame() {
-        return lastTurnGame;
-    }
-
-    public void setLastTurnGame(GameModel lastTurnGame) {
-        this.lastTurnGame = lastTurnGame;
+    public MakeMoveReturnValue makeMove(MoveModel move) {
+        if(curTurnGame.isMoveValid(move)) {
+            lastTurnGame = curTurnGame.clone();
+            curTurnGame.makeMove(move);
+            if (curTurnGame.isGameFinished()) {
+                return new MakeMoveReturnValue(true, true, curTurnGame.whoWon());
+            } else {
+                return new MakeMoveReturnValue(false, true, PlayerType.NO_ONE);
+            }
+        }
+        return new MakeMoveReturnValue(false, false, PlayerType.NO_ONE);
     }
 
     public boolean equals(String progressName) {
         return this.progressName.equals(progressName);
     }
 
-    public String toString() {
-        return progressName + " " + player1 + " " + player2;
-        //TODO maybe a change is needed
+
+}
+
+class MakeMoveReturnValue {
+    private boolean isGameFinished = false;
+    private boolean isMoveValid = true;
+    private PlayerType winner;
+
+    public MakeMoveReturnValue(boolean isGameFinished, boolean isMoveValid, PlayerType winner) {
+        this.isGameFinished = isGameFinished;
+        this.isMoveValid = isMoveValid;
+        this.winner = winner;
+    }
+
+    public boolean isGameFinished() {
+        return isGameFinished;
+    }
+
+    public boolean isMoveValid() {
+        return isMoveValid;
+    }
+
+    public PlayerType getWinner() {
+        return winner;
     }
 }

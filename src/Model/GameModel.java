@@ -9,5 +9,7 @@ public abstract class GameModel {
     public abstract PlayerType whoWon();
 
     public abstract boolean isMoveValid(MoveModel move);
+
+    public abstract void makeMove(MoveModel move);
     //TODO add me
 }
