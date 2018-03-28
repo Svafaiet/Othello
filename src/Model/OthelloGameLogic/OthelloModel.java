@@ -5,8 +5,8 @@ import Model.*;
 public class OthelloModel extends GameModel {
 
     private static final int RANGE = 6;
-    private static final int MIDDLE_MINUS = (RANGE-1)/2;
-    private static final int MIDDLE_PLUS = (RANGE+1)/2;
+    private static final int MIDDLE_MINUS = (RANGE - 1) / 2;
+    private static final int MIDDLE_PLUS = (RANGE + 1) / 2;
 
     private boolean isInRange(int x) {
         return (x >= 0) && (x < RANGE);
@@ -48,17 +48,16 @@ public class OthelloModel extends GameModel {
         return cells[pair.getX()][pair.getY()];
     }
 
-    private SetTawReturnValue setTaw(int i, int j, Cell cell) {
-        if(isInRange(i) && isInRange(j)) {
+    private boolean setTaw(int i, int j, Cell cell) {
+        if (isInRange(i) && isInRange(j)) {
             cells[i][j] = cell;
-            return new SetTawReturnValue(true);
-        }
-        else {
-            return new SetTawReturnValue(false);
+            return true;
+        } else {
+            return false;
         }
     }
 
-    private SetTawReturnValue setTaw(Pair point, Cell cell) {
+    private boolean setTaw(Pair point, Cell cell) {
         return setTaw(point.getX(), point.getY(), cell);
     }
 
@@ -83,7 +82,7 @@ public class OthelloModel extends GameModel {
         if (!isInRange(point)) {
             return false;
         }
-        if (at(point) == Cell.CELL_EMPTY) {
+        if (at(point) != Cell.CELL_EMPTY) {
             return false;
         }
         for (Pair dir : Direction.ALL_DIRECTIONS) {
@@ -99,13 +98,13 @@ public class OthelloModel extends GameModel {
 
     }
 
-    private boolean reverseTaw(Pair point) {
-        return setTaw(point, CellFunctions.oppositeCellType(at(point))).isInRange();
+    private void reverseTaw(Pair point) {
+        setTaw(point, CellFunctions.oppositeCellType(at(point)));
     }
-    
+
     private void reverseTawsInDirection(Pair point, Pair dir, OthelloMoveModel othelloMove) {
         int distance = 1;
-        while(isInRange(point) &&
+        while (isInRange(point) &&
                 (at(Direction.moveInDirection(dir, point, distance)) ==
                         CellFunctions.oppositeCellType(othelloMove.getPlayerType()))) {
             reverseTaw(Direction.moveInDirection(dir, point, distance));
@@ -113,19 +112,31 @@ public class OthelloModel extends GameModel {
         }
     }
 
-    private void reveresTawsInDirections(Pair point, OthelloMoveModel othelloMove) {
+    private void reverseTawsInDirections(Pair point, OthelloMoveModel othelloMove) {
         for (Pair dir : Direction.ALL_DIRECTIONS) {
             reverseTawsInDirection(point, dir, othelloMove);
+        }
+    }
+
+    public PutTawReturnValue putTawInPoint(MoveModel move) {
+        OthelloMoveModel othelloMove = (OthelloMoveModel) move;
+        Pair point = new Pair(othelloMove.getX(), othelloMove.getY());
+        if (isMoveValid(move)) {
+            setTaw(point, CellFunctions.cellType(othelloMove.getPlayerType()));
+            reverseTawsInDirections(point, othelloMove);
+            return new PutTawReturnValue(true);
+        } else {
+            return new PutTawReturnValue(false);
         }
     }
 
     public boolean isGameFinished() {
         for (int i = 0; i < RANGE; i++) {
             for (int j = 0; j < RANGE; j++) {
-                if(isMoveValid(new OthelloMoveModel(PlayerType.PLAYER1, i, j))) {
+                if (isMoveValid(new OthelloMoveModel(PlayerType.PLAYER1, i, j))) {
                     return false;
                 }
-                if(isMoveValid(new OthelloMoveModel(PlayerType.PLAYER2, i, j))) {
+                if (isMoveValid(new OthelloMoveModel(PlayerType.PLAYER2, i, j))) {
                     return false;
                 }
             }
@@ -134,43 +145,46 @@ public class OthelloModel extends GameModel {
     }
 
     public PlayerType whoWon() {
-        if(isGameFinished()) {
+        if (isGameFinished()) {
             int player1Count = 0;
             int player2Count = 0;
             for (int i = 0; i < RANGE; i++) {
                 for (int j = 0; j < RANGE; j++) {
-                    if(at(i, j) == Cell.CELL_PLAYER1) {
+                    if (at(i, j) == Cell.CELL_PLAYER1) {
                         player1Count++;
                     }
-                    if(at(i, j) == Cell.CELL_PLAYER2) {
+                    if (at(i, j) == Cell.CELL_PLAYER2) {
                         player2Count++;
                     }
                 }
             }
-           if(player1Count > player2Count) {
+            if (player1Count > player2Count) {
                 return PlayerType.PLAYER1;
-           }
-           if(player1Count < player2Count) {
+            }
+            if (player1Count < player2Count) {
                 return PlayerType.PLAYER2;
-           }
-           return PlayerType.NO_ONE;
+            }
+            return PlayerType.NO_ONE;
         } else {
             return PlayerType.NO_ONE;
         }
     }
 
 
-
 }
 
-class SetTawReturnValue {
-    private boolean isInRange;
+class PutTawReturnValue {
+    private boolean isValid = true;
 
-    SetTawReturnValue(boolean isInRange) {
-        this.isInRange = isInRange;
+    PutTawReturnValue(boolean isValid) {
+        this.isValid = isValid;
     }
 
-    public boolean isInRange() {
-        return isInRange;
+    public void setValid(boolean valid) {
+        isValid = valid;
+    }
+
+    public boolean isValid() {
+        return isValid;
     }
 }
