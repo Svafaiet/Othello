@@ -1,6 +1,6 @@
-package View.OthelloView;
+package View.OthelloView.Viewables;
 
-import View.Viewable;
+import View.Viewables.Viewable;
 
 public class OthelloViewable extends Viewable {
     private int range;

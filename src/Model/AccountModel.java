@@ -12,12 +12,12 @@ public class AccountModel implements Comparable<AccountModel> {
         totalWins = 0;
     }
 
+    //TODO not finished Games are Counted in this
     public void win() {
         totalWins += 1;
-        totalGames += 1;
     }
 
-    public void lose() {
+    public void endedAGame() {
         totalGames += 1;
     }
 

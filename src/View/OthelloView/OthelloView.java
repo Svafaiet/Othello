@@ -1,6 +1,8 @@
 package View.OthelloView;
 
 import View.*;
+import View.OthelloView.Viewables.OthelloViewable;
+import View.Viewables.Viewable;
 
 public class OthelloView extends GameView {
     @Override

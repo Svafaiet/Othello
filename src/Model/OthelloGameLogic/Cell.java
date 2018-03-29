@@ -3,10 +3,8 @@ package Model.OthelloGameLogic;
 import Model.PlayerType;
 
 public enum Cell {
-    CELL_PLAYER1, CELL_PLAYER2, CELL_EMPTY
-}
+    CELL_PLAYER1, CELL_PLAYER2, CELL_EMPTY;
 
-class CellFunctions {
     public static Cell oppositeCellType(Cell cell) {
         if(cell == Cell.CELL_PLAYER1) {
             return Cell.CELL_PLAYER2;
@@ -36,5 +34,4 @@ class CellFunctions {
         }
         return Cell.CELL_EMPTY;
     }
-
 }

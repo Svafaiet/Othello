@@ -68,14 +68,14 @@ public class OthelloModel extends GameModel {
         if (!isInRange(point)) {
             return false;
         }
-        return (at(point) == CellFunctions.oppositeCellType(playerTurn));
+        return (at(point) == Cell.oppositeCellType(playerTurn));
     }
 
     private boolean isCellSame(Pair point) {
         if (!isInRange(point)) {
             return false;
         }
-        return (at(point) == CellFunctions.cellType(playerTurn));
+        return (at(point) == Cell.cellType(playerTurn));
     }
 
     private void passTurn() {
@@ -126,19 +126,19 @@ public class OthelloModel extends GameModel {
         return false;
     }
 
-    public PlayerType getPlayerTurn() {
-        return playerTurn;
+    public int whoseTurnItIs() {
+        return playerTurn.toIndex();
     }
 
     private void reverseTaw(Pair point) {
-        setTaw(point, CellFunctions.oppositeCellType(at(point)));
+        setTaw(point, Cell.oppositeCellType(at(point)));
     }
 
     private void reverseTawsInDirection(Pair point, Pair dir, OthelloMoveModel othelloMove) {
         int distance = 1;
         while (isInRange(point) &&
                 (at(Direction.moveInDirection(dir, point, distance)) ==
-                        CellFunctions.oppositeCellType(playerTurn))) {
+                        Cell.oppositeCellType(playerTurn))) {
             reverseTaw(Direction.moveInDirection(dir, point, distance));
             distance++;
         }
@@ -153,7 +153,7 @@ public class OthelloModel extends GameModel {
     public void putTawInPoint(MoveModel move) {
         OthelloMoveModel othelloMove = (OthelloMoveModel) move;
         Pair point = new Pair(othelloMove.getX(), othelloMove.getY());
-        setTaw(point, CellFunctions.cellType(playerTurn));
+        setTaw(point, Cell.cellType(playerTurn));
         reverseTawsInDirections(point, othelloMove);
         passTurn();
         if (!canPlayerMove()) {
@@ -174,7 +174,7 @@ public class OthelloModel extends GameModel {
         return isGameFinished;
     }
 
-    public PlayerType whoWon() {
+    public int whoWonIndex() {
         if (isGameFinished()) {
             int player1Count = 0;
             int player2Count = 0;
@@ -189,16 +189,15 @@ public class OthelloModel extends GameModel {
                 }
             }
             if (player1Count > player2Count) {
-                return PlayerType.PLAYER1;
+                return PlayerType.PLAYER1.toIndex();
             }
             if (player1Count < player2Count) {
-                return PlayerType.PLAYER2;
+                return PlayerType.PLAYER2.toIndex();
             }
-            return PlayerType.NO_ONE;
+            return PlayerType.NO_ONE.toIndex();
         } else {
-            return PlayerType.NO_ONE;
+            return PlayerType.NO_ONE.toIndex();
         }
     }
-
 
 }

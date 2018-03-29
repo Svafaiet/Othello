@@ -13,40 +13,24 @@ public class ProgramModel {
     }
 
     private ArrayList<ProgressModel> notFinishedProgresses;
-    private ArrayList<AccountModel> acounts;
+    private ArrayList<AccountModel> accounts;
     private ProgressModel runningProgress;
 
-    public AddNewPlayerReturnValue addNewPlayer(AccountModel player) {
-        AddNewPlayerReturnValue addNewPlayerReturnValue = new AddNewPlayerReturnValue(acounts.contains(player));
-        if (!acounts.contains(player)) {
-            acounts.add(player);
-        }
-        return addNewPlayerReturnValue;
-    }
-
-    public AddNewProgressReturnValue addNewProgress(ProgressModel progress) {
-        AddNewProgressReturnValue addNewProgress = new AddNewProgressReturnValue();
-        addNewProgress.isProgressNew(notFinishedProgresses.contains(progress));
-        for (AccountModel player : progress.getPlayers()) {
-            if (!acounts.contains(player)) {
-                addNewProgress.arePlayersNew(false);
-                break;
-            }
-        }
-        addNewProgress.arePlayersNew(true);
-        if (addNewProgress.isRequestValid()) {
-            notFinishedProgresses.add(progress);
-        }
-        return addNewProgress;
-    }
-
-    //TODO not belong to Model
     public ArrayList<ProgressModel> getProgresses() {
         return notFinishedProgresses;
     }
 
-    public ArrayList<AccountModel> getAcounts() {
-        return acounts;
+    public ArrayList<AccountModel> getAccounts() {
+        return accounts;
+    }
+
+    private AccountModel findAccountByName(String accountName) {
+        for(AccountModel account : accounts) {
+            if(account.equals(accountName)) {
+                return account;
+            }
+        }
+        return null;
     }
 
     private ProgressModel findProgressByName(String progressName) {
@@ -58,6 +42,31 @@ public class ProgramModel {
         return null;
     }
 
+    public AddNewPlayerReturnValue addNewAccount(AccountModel account) {
+        AddNewPlayerReturnValue addNewPlayerReturnValue = new AddNewPlayerReturnValue(accounts.contains(account));
+        if (!accounts.contains(account)) {
+            accounts.add(account);
+        }
+        return addNewPlayerReturnValue;
+    }
+
+    public AddNewProgressReturnValue addNewProgress(String progressName, String[] players) {
+        AddNewProgressReturnValue addNewProgress = new AddNewProgressReturnValue();
+        addNewProgress.isProgressNew(findProgressByName(progressName) != null);
+        for (String playerName : players) {
+            if (findAccountByName(playerName) != null) {
+                addNewProgress.arePlayersNew(true);
+                break;
+            }
+        }
+        addNewProgress.arePlayersNew(false);
+        if (addNewProgress.isRequestValid()) {
+            ProgressModel progress = ProgressModel.makeProgress(progressName, players);
+            notFinishedProgresses.add(progress);
+        }
+        return addNewProgress;
+    }
+
     public LoadProgressReturnValue loadProgress(String progressName) {
         LoadProgressReturnValue loadProgressReturnValue =
                 new LoadProgressReturnValue(findProgressByName(progressName) != null, isAnyProgressRunning());
@@ -65,7 +74,20 @@ public class ProgramModel {
         return loadProgressReturnValue;
     }
 
-    public UndoReturnValue
+    public UndoReturnValue undo(String progressName) {
+        ProgressModel progress = findProgressByName(progressName);
+        if (progress.isUndoValid()) {
+            progress.useUndo();
+            return new UndoReturnValue();
+        }
+        UndoReturnValue undoReturnValue = new UndoReturnValue();
+        undoReturnValue.canNotUndo();
+        return undoReturnValue;
+    }
+
+    public MakeMoveReturnValue makeMove(MoveModel move) {
+        return runningProgress.makeMove(move);
+    }
 
     private boolean isAnyProgressRunning() {
         if (runningProgress == null) {
@@ -80,10 +102,21 @@ public class ProgramModel {
 
     public void endProgress() {
         notFinishedProgresses.remove(runningProgress);
+        if(runningProgress.getCurTurnGame().whoWonIndex() == Integer.MAX_VALUE) {
+            return;
+        }
+
+        for(PlayerModel player : runningProgress.getPlayers()) {
+            findAccountByName(player.getPlayerName()).endedAGame();
+        }
+        String winnerName = runningProgress.getPlayers().get(
+                runningProgress.getCurTurnGame().whoWonIndex())
+                .getPlayerName();
+        findAccountByName(winnerName).win();
         quitProgress();
     }
 
-    public void quitProgress() {
+    private void quitProgress() {
         runningProgress = null;
     }
 
