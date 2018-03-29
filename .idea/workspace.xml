@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba5cab57-b4c0-495b-b543-cb3465baab4d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/View/Viewables/ProgressViewable.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/Model/AccountModel.java" afterPath="$PROJECT_DIR$/src/Model/AccountModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/Model/GameModel.java" afterPath="$PROJECT_DIR$/src/Model/GameModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/Model/OthelloGameLogic/Cell.java" afterPath="$PROJECT_DIR$/src/Model/OthelloGameLogic/Cell.java" />
-      <change beforePath="$PROJECT_DIR$/src/Model/OthelloGameLogic/OthelloModel.java" afterPath="$PROJECT_DIR$/src/Model/OthelloGameLogic/OthelloModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/Model/PlayerModel.java" afterPath="$PROJECT_DIR$/src/Model/PlayerModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/Model/PlayerType.java" afterPath="$PROJECT_DIR$/src/Model/PlayerType.java" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ProgramModel.java" afterPath="$PROJECT_DIR$/src/Model/ProgramModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ProgressModel.java" afterPath="$PROJECT_DIR$/src/Model/ProgressModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/View/GameView.java" afterPath="$PROJECT_DIR$/src/View/GameView.java" />
-      <change beforePath="$PROJECT_DIR$/src/View/OthelloView/OthelloView.java" afterPath="$PROJECT_DIR$/src/View/OthelloView/OthelloView.java" />
-      <change beforePath="$PROJECT_DIR$/src/View/OthelloView/OthelloViewable.java" afterPath="$PROJECT_DIR$/src/View/OthelloView/Viewables/OthelloViewable.java" />
-      <change beforePath="$PROJECT_DIR$/src/View/ProgramView.java" afterPath="$PROJECT_DIR$/src/View/ProgramView.java" />
-      <change beforePath="$PROJECT_DIR$/src/View/ProgressView.java" afterPath="$PROJECT_DIR$/src/View/ProgressView.java" />
-      <change beforePath="$PROJECT_DIR$/src/View/Viewable.java" afterPath="$PROJECT_DIR$/src/View/Viewables/Viewable.java" />
-    </list>
+    <list default="true" id="ba5cab57-b4c0-495b-b543-cb3465baab4d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,23 +12,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OthelloViewable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/OthelloView/Viewables/OthelloViewable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <element signature="e#232#233#0" expanded="true" />
-                <element signature="e#264#265#0" expanded="true" />
-                <element signature="e#293#294#0" expanded="true" />
-                <element signature="e#321#322#0" expanded="true" />
-                <element signature="e#357#358#0" expanded="true" />
-                <element signature="e#385#386#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PlayerView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/PlayerView.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -127,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProgramView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProgramView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/ProgramView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+            <state relative-caret-position="34">
+              <caret line="8" column="59" lean-forward="true" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1628#1629#0" expanded="true" />
@@ -142,6 +108,18 @@
                 <element signature="e#1871#1872#0" expanded="true" />
                 <element signature="e#2112#2113#0" expanded="true" />
                 <element signature="e#2171#2172#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProgramController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/ProgramController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -185,8 +163,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -262,6 +240,7 @@
         <option value="$PROJECT_DIR$/src/View/Viewables/ProgressViewable.java" />
         <option value="$PROJECT_DIR$/src/View/ProgressView.java" />
         <option value="$PROJECT_DIR$/src/View/ProgramView.java" />
+        <option value="$PROJECT_DIR$/src/Controller/ProgramController.java" />
       </list>
     </option>
   </component>
@@ -303,39 +282,6 @@
               <item name="Othello" type="b2602c69:ProjectViewProjectNode" />
               <item name="Othello" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Othello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Othello" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Othello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Othello" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="OthelloGameLogic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Othello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Othello" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Othello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Othello" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="OthelloView" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Othello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Othello" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="Viewables" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -528,12 +474,12 @@
       <workItem from="1521983064065" duration="2854000" />
       <workItem from="1521986223829" duration="26780000" />
       <workItem from="1522181996305" duration="19373000" />
-      <workItem from="1522309619392" duration="13373000" />
+      <workItem from="1522309619392" duration="15197000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62380000" />
+    <option name="totallyTimeSpent" value="64204000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -581,44 +527,15 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Model/ProgramModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-          <folding>
-            <element signature="method#ProgramModel#0;class#ProgramModel#0" expanded="false" />
-            <element signature="method#addNewProgress#0;class#ProgramModel#0" expanded="false" />
-            <element signature="method#findProgressByName#0;class#ProgramModel#0" expanded="false" />
-            <element signature="method#loadProgress#0;class#ProgramModel#0" expanded="false" />
-            <element signature="method#isAnyProgressRunning#0;class#ProgramModel#0" expanded="false" />
-            <element signature="e#3210#3211#0" expanded="true" />
-            <element signature="e#3282#3283#0" expanded="true" />
-            <element signature="e#3896#3897#0" expanded="false" />
-            <element signature="e#3934#3935#0" expanded="false" />
-            <element signature="e#4161#4162#0" expanded="true" />
-            <element signature="e#4207#4208#0" expanded="true" />
-            <element signature="class#EndProgressReturnValue#0" expanded="false" />
-            <element signature="class#AddNewPlayerReturnValue#0" expanded="false" />
-            <element signature="class#LoadProgressReturnValue#0" expanded="false" />
-            <element signature="method#LoadProgressReturnValue#0;class#LoadProgressReturnValue#0" expanded="false" />
-            <element signature="class#UndoReturnValue#0" expanded="false" />
-            <element signature="e#5424#5425#0" expanded="true" />
-            <element signature="e#5455#5456#0" expanded="true" />
-            <element signature="e#5487#5488#0" expanded="true" />
-            <element signature="e#5517#5518#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/PlayerModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
           <folding>
-            <element signature="e#351#352#0" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-            <element signature="e#423#424#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
+            <element signature="e#351#352#0" expanded="false" />
+            <element signature="e#384#385#0" expanded="false" />
+            <element signature="e#423#424#0" expanded="false" />
+            <element signature="e#468#469#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -629,8 +546,8 @@
           <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           <folding>
             <element signature="method#AccountModel#0;class#AccountModel#0" expanded="false" />
-            <element signature="e#447#448#0" expanded="true" />
-            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#447#448#0" expanded="false" />
+            <element signature="e#478#479#0" expanded="false" />
             <element signature="method#compareTo#0;class#AccountModel#0" expanded="false" />
           </folding>
         </state>
@@ -641,7 +558,7 @@
         <state relative-caret-position="459">
           <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -736,21 +653,21 @@
             <element signature="method#findProgressByName#0;class#ProgramModel#0" expanded="false" />
             <element signature="method#loadProgress#0;class#ProgramModel#0" expanded="false" />
             <element signature="method#isAnyProgressRunning#0;class#ProgramModel#0" expanded="false" />
-            <element signature="e#3210#3211#0" expanded="true" />
-            <element signature="e#3282#3283#0" expanded="true" />
+            <element signature="e#3210#3211#0" expanded="false" />
+            <element signature="e#3282#3283#0" expanded="false" />
             <element signature="e#3896#3897#0" expanded="false" />
             <element signature="e#3934#3935#0" expanded="false" />
-            <element signature="e#4161#4162#0" expanded="true" />
-            <element signature="e#4207#4208#0" expanded="true" />
+            <element signature="e#4161#4162#0" expanded="false" />
+            <element signature="e#4207#4208#0" expanded="false" />
             <element signature="class#EndProgressReturnValue#0" expanded="false" />
             <element signature="class#AddNewPlayerReturnValue#0" expanded="false" />
             <element signature="class#LoadProgressReturnValue#0" expanded="false" />
             <element signature="method#LoadProgressReturnValue#0;class#LoadProgressReturnValue#0" expanded="false" />
             <element signature="class#UndoReturnValue#0" expanded="false" />
-            <element signature="e#5424#5425#0" expanded="true" />
-            <element signature="e#5455#5456#0" expanded="true" />
-            <element signature="e#5487#5488#0" expanded="true" />
-            <element signature="e#5517#5518#0" expanded="true" />
+            <element signature="e#5424#5425#0" expanded="false" />
+            <element signature="e#5455#5456#0" expanded="false" />
+            <element signature="e#5487#5488#0" expanded="false" />
+            <element signature="e#5517#5518#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -760,7 +677,7 @@
         <state relative-caret-position="170">
           <caret line="11" column="46" lean-forward="false" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -771,8 +688,8 @@
           <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
           <folding>
             <element signature="method#AccountModel#0;class#AccountModel#0" expanded="false" />
-            <element signature="e#447#448#0" expanded="true" />
-            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#447#448#0" expanded="false" />
+            <element signature="e#478#479#0" expanded="false" />
             <element signature="method#compareTo#0;class#AccountModel#0" expanded="false" />
           </folding>
         </state>
@@ -903,7 +820,7 @@
         <state relative-caret-position="806">
           <caret line="74" column="6" lean-forward="false" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -920,8 +837,8 @@
             <element signature="method#addNewProgress#0;class#ProgramModel#0" expanded="false" />
             <element signature="method#loadProgress#0;class#ProgramModel#0" expanded="false" />
             <element signature="method#undo#0;class#ProgramModel#0" expanded="false" />
-            <element signature="e#2966#2967#0" expanded="true" />
-            <element signature="e#3019#3020#0" expanded="true" />
+            <element signature="e#2966#2967#0" expanded="false" />
+            <element signature="e#3019#3020#0" expanded="false" />
             <element signature="method#isAnyProgressRunning#0;class#ProgramModel#0" expanded="false" />
             <element signature="method#endProgress#0;class#ProgramModel#0" expanded="false" />
             <element signature="class#AddNewProgressReturnValue#0" expanded="false" />
@@ -950,10 +867,10 @@
           <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
           <folding>
             <element signature="method#AccountModel#0;class#AccountModel#0" expanded="false" />
-            <element signature="e#385#386#0" expanded="true" />
-            <element signature="e#415#416#0" expanded="true" />
-            <element signature="e#447#448#0" expanded="true" />
-            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="false" />
+            <element signature="e#415#416#0" expanded="false" />
+            <element signature="e#447#448#0" expanded="false" />
+            <element signature="e#478#479#0" expanded="false" />
             <element signature="method#compareTo#0;class#AccountModel#0" expanded="false" />
           </folding>
         </state>
@@ -976,10 +893,10 @@
         <state relative-caret-position="170">
           <caret line="10" column="37" lean-forward="false" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
           <folding>
-            <element signature="e#351#352#0" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-            <element signature="e#423#424#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
+            <element signature="e#351#352#0" expanded="false" />
+            <element signature="e#384#385#0" expanded="false" />
+            <element signature="e#423#424#0" expanded="false" />
+            <element signature="e#468#469#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1013,12 +930,12 @@
         <state relative-caret-position="204">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <element signature="e#232#233#0" expanded="true" />
-            <element signature="e#264#265#0" expanded="true" />
-            <element signature="e#293#294#0" expanded="true" />
-            <element signature="e#321#322#0" expanded="true" />
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#232#233#0" expanded="false" />
+            <element signature="e#264#265#0" expanded="false" />
+            <element signature="e#293#294#0" expanded="false" />
+            <element signature="e#321#322#0" expanded="false" />
+            <element signature="e#357#358#0" expanded="false" />
+            <element signature="e#385#386#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1122,8 +1039,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/ProgramView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+        <state relative-caret-position="34">
+          <caret line="8" column="59" lean-forward="true" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1628#1629#0" expanded="true" />
@@ -1134,6 +1051,16 @@
             <element signature="e#1871#1872#0" expanded="true" />
             <element signature="e#2112#2113#0" expanded="true" />
             <element signature="e#2171#2172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ProgramController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
