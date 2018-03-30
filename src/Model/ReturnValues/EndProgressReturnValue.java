@@ -1,13 +1,13 @@
 package Model.ReturnValues;
 
 public class EndProgressReturnValue {
-    private boolean hasProgress;
+    private String winnerName;
 
-    public boolean hasProgress() {
-        return hasProgress;
+    public EndProgressReturnValue(String winnerName) {
+        this.winnerName = winnerName;
     }
 
-    public EndProgressReturnValue(boolean hasProgress) {
-        this.hasProgress = hasProgress;
+    public String getWinnerName() {
+        return winnerName;
     }
 }

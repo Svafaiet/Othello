@@ -14,6 +14,5 @@ public class OthelloView extends GameView {
             }
             System.out.println();
         }
-        System.out.println(othelloViewable.whoseTurn() + ":");
     }
 }

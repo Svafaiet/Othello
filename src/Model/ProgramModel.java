@@ -1,8 +1,6 @@
 package Model;
 
-import Model.ReturnValues.AddNewPlayerReturnValue;
-import Model.ReturnValues.AddNewProgressReturnValue;
-import Model.ReturnValues.LoadProgressReturnValue;
+import Model.ReturnValues.*;
 
 import java.util.ArrayList;
 
@@ -106,10 +104,10 @@ public class ProgramModel {
         return runningProgress.getCurTurnGame().isGameFinished();
     }
 
-    public void endProgress() {
+    public EndProgressReturnValue endProgress() {
         notFinishedProgresses.remove(runningProgress);
         if(runningProgress.getCurTurnGame().whoWonIndex() == Integer.MAX_VALUE) {
-            return;
+            return new EndProgressReturnValue("No One");
         }
 
         for(PlayerModel player : runningProgress.getPlayers()) {
@@ -120,6 +118,7 @@ public class ProgramModel {
                 .getPlayerName();
         findAccountByName(winnerName).win();
         quitProgress();
+        return new EndProgressReturnValue(winnerName);
     }
 
     private void quitProgress() {

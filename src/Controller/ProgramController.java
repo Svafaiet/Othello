@@ -2,8 +2,15 @@ package Controller;
 
 import Model.*;
 import View.*;
+import View.OthelloView.Viewables.OthelloViewable;
 import View.UserRequestType;
+import View.Viewables.AccountViewable;
+import View.Viewables.PlayerViewable;
+import View.Viewables.ProgressViewable;
 import View.Viewables.Viewable;
+
+import java.util.Collection;
+import java.util.Collections;
 
 public class ProgramController {
     ProgramView programView = new ProgramView();
@@ -42,26 +49,89 @@ public class ProgramController {
                 quit();
                 break;
             case UNDO:
-                if(!programModel.undo().isUndoValid()) {
-                    programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_INVALID_UNDO));
-                }
-                programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_OTHELLO_GAME)); //fixMe
+                undo();
                 break;
             case NEW_GAME:
-                if(!programModel.addNewProgress(requestWords[2], requestText.substring(9).split("\\s+")).isRequestValid()) {
-                    programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_INVALID_NAME));
-                } else {
-                    programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_OTHELLO_GAME));//fixME
-                }
+                newGame();
                 break;
             case LOAD_GAME:
-                waitingOnLoading = true;
+                loadGame();
                 break;
             case NEW_PLAYER:
-                if(programModel.addNewAccount(requestWords[2]).hasPlayer()) {
-                    programView.showProgramRequest(new Viewa);
-                }
+                newPlayer();
+                break;
+            case PRINT_PLAYERS:
+                printPlayers();
+                break;
+            case LOAD_GAME_NAME:
+                loadGameName();
+                break;
+            case PUT_TAW_IN_OTHELLO:
+                putTawInOthello();
+                break;
+            case INVALID_COMMAND:
+                invalidCommand();
         }
+    }
+
+    private void invalidCommand() {
+        programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_INVALID_COMMAND));
+    }
+
+    private void putTawInOthello() {
+        if (!programModel.makeMove().isMoveValid()) {
+            programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_INVALID_CHOICE));
+        } else {
+            programView.showProgramRequest(new OthelloViewable());  //fixMe
+            if (programModel.isProgressFinished()) {
+                if(programModel.endProgress().getWinnerName().equals("No One")){
+                    programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_WINNER)); //fixMe
+                } else {
+                    programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_WINNER)); //fixMe
+                }
+            }
+        }
+    }
+
+    private void loadGameName() {
+        if (!programModel.loadProgress(requestText).hasGame()) {
+            programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_INVALID_NAME));
+        }
+    }
+
+    private void printPlayers() {
+        Collections.sort(programModel.getAccounts());
+        for (AccountModel acount : programModel.getAccounts()) {
+            programView.showProgramRequest(new AccountViewable()); //fixMe
+        }
+    }
+
+    private void newPlayer() {
+        if (programModel.addNewAccount(requestWords[2]).hasPlayer()) { //fixMe
+            programView.showProgramRequest(new PlayerViewable());
+        }
+    }
+
+    private void loadGame() {
+        waitingOnLoading = true;
+        for (ProgressModel progress : programModel.getProgresses()) {
+            programView.showProgramRequest(new ProgressViewable()); //fixMe
+        }
+    }
+
+    private void newGame() {
+        if (!programModel.addNewProgress(requestWords[2], requestText.substring(9).split("\\s+")).isRequestValid()) {
+            programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_INVALID_NAME));
+        } else {
+            programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_OTHELLO_GAME));//fixME
+        }
+    }
+
+    private void undo() {
+        if (!programModel.undo().isUndoValid()) {
+            programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_INVALID_UNDO));
+        }
+        programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_OTHELLO_GAME)); //fixMe
     }
 
     private void quit() {

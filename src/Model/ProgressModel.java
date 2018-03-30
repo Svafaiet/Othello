@@ -1,6 +1,7 @@
 package Model;
 
 import Model.OthelloGameLogic.OthelloModel;
+import Model.ReturnValues.MakeMoveReturnValue;
 
 import java.util.ArrayList;
 
@@ -76,14 +77,3 @@ public class ProgressModel {
     }
 }
 
-class MakeMoveReturnValue {
-    private boolean isMoveValid = true;
-
-    public MakeMoveReturnValue(boolean isMoveValid) {
-        this.isMoveValid = isMoveValid;
-    }
-
-    public boolean isMoveValid() {
-        return isMoveValid;
-    }
-}

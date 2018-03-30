@@ -5,11 +5,12 @@ import View.Viewables.Viewable;
 public class OthelloViewable extends Viewable {
     private int range;
     private String[][] board;
-    private String whoseTurn;
 
-    public String whoseTurn() {
-        return whoseTurn;
+    public OthelloViewable(String[][] board, int range) {
+        this.board = board;
+        this.range = range;
     }
+
 
     public int getRange() {
         return range;

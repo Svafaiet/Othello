@@ -4,9 +4,9 @@ import Model.*;
 
 public class OthelloModel extends GameModel {
 
-    private static final int RANGE = 6;
-    private static final int MIDDLE_MINUS = (RANGE - 1) / 2;
-    private static final int MIDDLE_PLUS = (RANGE + 1) / 2;
+    public final int RANGE = 6;
+    private final int MIDDLE_MINUS = (RANGE - 1) / 2;
+    private final int MIDDLE_PLUS = (RANGE + 1) / 2;
 
     private boolean isInRange(int x) {
         return (x >= 0) && (x < RANGE);
