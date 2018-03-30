@@ -14,8 +14,8 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class ProgramController {
-    ProgramView programView = new ProgramView();
-    ProgramModel programModel = ProgramModel.getInstance();
+    private ProgramView programView = new ProgramView();
+    private ProgramModel programModel = ProgramModel.getInstance();
     private UserRequestType userRequestType;
     private String requestText;
     private String[] requestWords;
@@ -24,14 +24,6 @@ public class ProgramController {
 
     public UserRequestType getUserRequestType() {
         return userRequestType;
-    }
-
-    public String getRequestText() {
-        return requestText;
-    }
-
-    public InputChecker getInputChecker() {
-        return inputChecker;
     }
 
     public void takeRequest() {
@@ -71,6 +63,7 @@ public class ProgramController {
                 break;
             case INVALID_COMMAND:
                 invalidCommand();
+                break;
         }
     }
 
@@ -79,11 +72,10 @@ public class ProgramController {
     }
 
     private void putTawInOthello() {
-        if (!programModel.makeMove().isMoveValid()) {
+        if (!programModel.makeMove(new ProgressController(programModel.getRunningProgress()).makeMoveForGame(requestText)).isMoveValid()) {
             programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_INVALID_CHOICE));
         } else {
-            programView.showProgramRequest(
-                    new ProgressController(programModel.getRunningProgress()).makeShowOthelloGameViewable());
+            showOthelloGame();
             if (programModel.isProgressFinished()) {
                 EndProgressReturnValue endProgressReturnValue = programModel.endProgress();
                 programView.showProgramRequest(
@@ -92,9 +84,17 @@ public class ProgramController {
         }
     }
 
+    private void showOthelloGame() {
+        programView.showProgramRequest(
+                new ProgressController(programModel.getRunningProgress()).makeShowOthelloGameViewable());
+    }
+
     private void loadGameName() {
         if (!programModel.loadProgress(requestText).hasGame()) {
             programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_INVALID_NAME));
+        } else {
+            waitingOnLoading = false;
+            showOthelloGame();
         }
     }
 
@@ -119,11 +119,11 @@ public class ProgramController {
     }
 
     private void newGame() {
-        if (!programModel.addNewProgress(requestWords[2], requestText.substring(9).split("\\s+")).isRequestValid()) {
+        if (!programModel.addNewProgress(requestWords[requestWords.length - 1],
+                requestText.substring(9, requestText.length() - requestWords[requestWords.length - 1].length() - 1).split("\\s+")).isRequestValid()) {
             programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_INVALID_NAME));
         } else {
-            programView.showProgramRequest(
-                    new ProgressController(programModel.getRunningProgress()).makeShowOthelloGameViewable());
+            showOthelloGame();
         }
     }
 
@@ -131,12 +131,12 @@ public class ProgramController {
         if (!programModel.undo().isUndoValid()) {
             programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_INVALID_UNDO));
         }
-        programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_OTHELLO_GAME)); //fixMe
+        showOthelloGame();
     }
 
     private void quit() {
         if (programModel.isAnyProgressRunning()) {
-            programModel.endProgress();
+            programModel.quitProgress();
             return;
         }
         waitingOnLoading = false;
@@ -163,7 +163,7 @@ class InputChecker {
             userRequestType = UserRequestType.LOAD_GAME_NAME;
         } else if (requestText.matches(InputRegex.UNDO) && whichPartAreWeIn.isInGame()) {
             userRequestType = UserRequestType.UNDO;
-        } else if (requestText.matches(InputRegex.NEW_PLAYER) && !whichPartAreWeIn.isInMenu()) { //TODO maybe needs change
+        } else if (requestText.matches(InputRegex.NEW_PLAYER) && whichPartAreWeIn.isInMenu()) { //TODO maybe needs change
             userRequestType = UserRequestType.NEW_PLAYER;
         } else if (requestText.matches(InputRegex.NEW_GAME) && whichPartAreWeIn.isInMenu()) {
             userRequestType = UserRequestType.NEW_GAME;
@@ -209,6 +209,6 @@ class WhichPartAreWeIn {
     }
 
     public boolean isInMenu() {
-        return !isInGame() && isInLoading();
+        return !isInGame() && !isInLoading();
     }
 }

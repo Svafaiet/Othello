@@ -92,6 +92,22 @@ public class OthelloModel extends GameModel {
         }
     }
 
+    public boolean isMoveValidInDirection(MoveModel move, Pair dir){
+        OthelloMoveModel othelloMove = (OthelloMoveModel) move;
+        Pair point = new Pair(othelloMove.getX(), othelloMove.getY());
+        if (isInRange(Direction.moveInDirection(dir, point, 1)) &&
+                isCellOpposite(Direction.moveInDirection(dir, point, 1))) {
+            for (int i = 2; i < 6; i++) {
+                if (isCellSame(Direction.moveInDirection(dir, point, i))) {
+                    return true;
+                } else if(!isInRange(point) || at(Direction.moveInDirection(dir, point, i)).equals(Cell.CELL_EMPTY)) {
+                    break;
+                }
+            }
+        }
+        return false;
+    }
+
     public boolean isMoveValid(MoveModel move) {
         OthelloMoveModel othelloMove = (OthelloMoveModel) move;
         //TODO make sure PlayerType is not NO_ONE
@@ -103,12 +119,8 @@ public class OthelloModel extends GameModel {
             return false;
         }
         for (Pair dir : Direction.ALL_DIRECTIONS) {
-            if (isCellOpposite(Direction.moveInDirection(dir, point, 1))) {
-                for (int i = 2; i < 6; i++) {
-                    if (isCellSame(Direction.moveInDirection(dir, point, i))) {
-                        return true;
-                    }
-                }
+            if(isMoveValidInDirection(move, dir)){
+                return true;
             }
         }
         return false;
@@ -146,7 +158,9 @@ public class OthelloModel extends GameModel {
 
     private void reverseTawsInDirections(Pair point, OthelloMoveModel othelloMove) {
         for (Pair dir : Direction.ALL_DIRECTIONS) {
-            reverseTawsInDirection(point, dir, othelloMove);
+            if(isMoveValidInDirection(othelloMove, dir)) {
+                reverseTawsInDirection(point, dir, othelloMove);
+            }
         }
     }
 

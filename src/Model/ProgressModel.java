@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class ProgressModel {
 
     private ProgressModel(){
+        players = new ArrayList<>();
     }
 
     public static ProgressModel makeProgress(String progressName, String[] players) {

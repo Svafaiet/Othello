@@ -1,7 +1,9 @@
 package Controller;
 
 import Controller.OthelloControllers.OthelloController;
+import Model.MoveModel;
 import Model.OthelloGameLogic.OthelloModel;
+import Model.OthelloGameLogic.OthelloMoveModel;
 import Model.PlayerModel;
 import Model.ProgressModel;
 import View.OthelloView.Viewables.OthelloViewable;
@@ -20,7 +22,7 @@ public class ProgressController {
     public ProgressController(ProgressModel progressModel) {
         this.progressModel = progressModel;
         othelloController = new OthelloController((OthelloModel) progressModel.getCurTurnGame());
-        playerController = new PlayerController(progressModel.whoseTurnItIs());
+        playerController = new PlayerController(progressModel.whoseTurnItIs().getPlayerName());
     }
 
     public ProgressViewable makeShowOthelloGameViewable() {
@@ -41,4 +43,7 @@ public class ProgressController {
         return progressViewable;
     }
 
+    public MoveModel makeMoveForGame(String requestMove) {
+        return new OthelloController().makeOthelloMove(requestMove);
+    }
 }

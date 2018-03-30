@@ -7,6 +7,6 @@ public class Program {
         do {
             programController.takeRequest();
             programController.handleRequests();
-        } while (programController.getUserRequestType().equals(UserRequestType.END));
+        } while (!programController.getUserRequestType().equals(UserRequestType.END));
     }
 }

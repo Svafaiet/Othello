@@ -40,4 +40,7 @@ public class ProgressViewable extends Viewable {
         this.players = players;
         this.gameName = gameName;
     }
+
+    public ProgressViewable(){
+    }
 }

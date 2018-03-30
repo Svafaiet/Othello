@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class ProgramModel {
     private ProgramModel() {
         notFinishedProgresses = new ArrayList<>();
+        accounts = new ArrayList<>();
         runningProgress = null;
     }
 
@@ -61,15 +62,16 @@ public class ProgramModel {
         AddNewProgressReturnValue addNewProgress = new AddNewProgressReturnValue();
         addNewProgress.isProgressNew(findProgressByName(progressName) != null);
         for (String playerName : players) {
-            if (findAccountByName(playerName) != null) {
-                addNewProgress.arePlayersNew(true);
+            if (findAccountByName(playerName) == null) {
+                addNewProgress.arePlayersNew(false);
                 break;
             }
         }
-        addNewProgress.arePlayersNew(false);
+        addNewProgress.arePlayersNew(true);
         if (addNewProgress.isRequestValid()) {
             ProgressModel progress = ProgressModel.makeProgress(progressName, players);
             notFinishedProgresses.add(progress);
+            runningProgress = progress;
         }
         return addNewProgress;
     }
@@ -123,7 +125,7 @@ public class ProgramModel {
         return new EndProgressReturnValue(winner.getPlayerName());
     }
 
-    private void quitProgress() {
+    public void quitProgress() {
         runningProgress = null;
     }
 

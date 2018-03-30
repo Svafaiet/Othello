@@ -14,7 +14,7 @@ public class ProgramView {
         String requestText;
         requestText = scanner.nextLine().replaceAll("\\s+", " ");
         requestText = requestText.replaceAll("^ ", "").replaceAll(" $", "");
-        System.out.println(requestText);
+        //System.out.println(requestText);
         return requestText;
     }
 

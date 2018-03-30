@@ -1,6 +1,7 @@
 package Controller.OthelloControllers;
 
 import Model.OthelloGameLogic.OthelloModel;
+import Model.OthelloGameLogic.OthelloMoveModel;
 import View.OthelloView.Viewables.OthelloViewable;
 
 public class OthelloController {
@@ -29,5 +30,21 @@ public class OthelloController {
 
     public OthelloController(OthelloModel othelloModel) {
         this.othelloModel = othelloModel;
+    }
+
+    public OthelloController(){
+    }
+
+    public OthelloMoveModel makeOthelloMove(String move) {
+        OthelloMoveModel othelloMoveModel = new OthelloMoveModel(findX(move), findY(move));
+        return othelloMoveModel;
+    }
+
+    public static int findY(String move) {
+        return move.charAt(0) - 'A';
+    }
+
+    public static int findX(String move) {
+        return move.charAt(1) - '1';
     }
 }

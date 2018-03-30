@@ -25,6 +25,12 @@ public class AccountModel implements Comparable<AccountModel> {
         return this.name.equals(name);
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        AccountModel accountModel = (AccountModel) obj;
+        return equals(accountModel.getAccountName());
+    }
+
     public String getAccountName() {
         return name;
     }
