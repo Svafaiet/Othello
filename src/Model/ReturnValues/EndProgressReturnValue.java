@@ -1,5 +1,7 @@
 package Model.ReturnValues;
 
+import Model.PlayerModel;
+
 public class EndProgressReturnValue {
     private String winnerName;
 

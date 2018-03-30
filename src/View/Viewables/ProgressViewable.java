@@ -27,6 +27,10 @@ public class ProgressViewable extends Viewable {
         return gameName;
     }
 
+    public ProgressViewable(PlayerViewable playerViewable) {
+        this.playerViewable = playerViewable;
+    }
+
     public ProgressViewable(PlayerViewable playerViewable, OthelloViewable othelloViewable) {
         this.playerViewable = playerViewable;
         this.othelloViewable = othelloViewable;

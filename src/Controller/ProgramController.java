@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.*;
+import Model.ReturnValues.EndProgressReturnValue;
 import View.*;
 import View.OthelloView.Viewables.OthelloViewable;
 import View.UserRequestType;
@@ -20,7 +21,6 @@ public class ProgramController {
     private String[] requestWords;
     private InputChecker inputChecker = new InputChecker();
     private boolean waitingOnLoading = false;
-    Viewable viewable;
 
     public UserRequestType getUserRequestType() {
         return userRequestType;
@@ -82,13 +82,12 @@ public class ProgramController {
         if (!programModel.makeMove().isMoveValid()) {
             programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_INVALID_CHOICE));
         } else {
-            programView.showProgramRequest(new OthelloViewable());  //fixMe
+            programView.showProgramRequest(
+                    new ProgressController(programModel.getRunningProgress()).makeShowOthelloGameViewable());
             if (programModel.isProgressFinished()) {
-                if(programModel.endProgress().getWinnerName().equals("No One")){
-                    programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_WINNER)); //fixMe
-                } else {
-                    programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_WINNER)); //fixMe
-                }
+                EndProgressReturnValue endProgressReturnValue = programModel.endProgress();
+                programView.showProgramRequest(
+                        new PlayerController(endProgressReturnValue.getWinnerName()).makeShowWinnerViewable());
             }
         }
     }
@@ -101,21 +100,21 @@ public class ProgramController {
 
     private void printPlayers() {
         Collections.sort(programModel.getAccounts());
-        for (AccountModel acount : programModel.getAccounts()) {
-            programView.showProgramRequest(new AccountViewable()); //fixMe
+        for (AccountModel account : programModel.getAccounts()) {
+            programView.showProgramRequest(new AccountController(account).makeShowAccount());
         }
     }
 
     private void newPlayer() {
-        if (programModel.addNewAccount(requestWords[2]).hasPlayer()) { //fixMe
-            programView.showProgramRequest(new PlayerViewable());
+        if (programModel.addNewAccount(requestWords[2]).hasPlayer()) {
+            programView.showProgramRequest(new AccountController(requestWords[2]).makeDuplicatAccountViewable());
         }
     }
 
     private void loadGame() {
         waitingOnLoading = true;
         for (ProgressModel progress : programModel.getProgresses()) {
-            programView.showProgramRequest(new ProgressViewable()); //fixMe
+            programView.showProgramRequest(new ProgressController(progress).makeShowProgressViewable());
         }
     }
 
@@ -123,7 +122,8 @@ public class ProgramController {
         if (!programModel.addNewProgress(requestWords[2], requestText.substring(9).split("\\s+")).isRequestValid()) {
             programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_INVALID_NAME));
         } else {
-            programView.showProgramRequest(new Viewable(ProgramRequestType.SHOW_OTHELLO_GAME));//fixME
+            programView.showProgramRequest(
+                    new ProgressController(programModel.getRunningProgress()).makeShowOthelloGameViewable());
         }
     }
 

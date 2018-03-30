@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class ProgramView {
     private Scanner scanner = new Scanner(System.in);
     private ProgressView progressView = new ProgressView();
+    private PlayerView playerView = new PlayerView();
     private AccountView accountView = new AccountView();
 
     public String getUserRequest() {
@@ -20,7 +21,7 @@ public class ProgramView {
     public void showProgramRequest(Viewable viewable) {
         switch (viewable.getRequestType()) {
             case SHOW_WINNER:
-                progressView.showWiningPlayer(viewable);
+                playerView.showWiningPlayer(viewable);
                 break;
             case SHOW_ACCOUNT:
                 accountView.showAccount(viewable);
@@ -32,7 +33,7 @@ public class ProgramView {
                 invalidUndo();
                 break;
             case SHOW_DUPLICATE_NAME:
-                duplicatAccountName(viewable);
+                duplicateAccountName(viewable);
                 break;
             case SHOW_INVALID_CHOICE:
                 invalidChoice();
@@ -61,7 +62,7 @@ public class ProgramView {
         System.out.println(Massages.INVALID_COMMAND);
     }
 
-    public void duplicatAccountName(Viewable viewable) {
+    public void duplicateAccountName(Viewable viewable) {
         System.out.println(Massages.DUPlICATE_ACCOUNT_MASSAGE
                 .replace("player_name", accountView.getAccountName(viewable)));
     }

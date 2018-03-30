@@ -75,5 +75,9 @@ public class ProgressModel {
         hasUndone = true;
         curTurnGame = lastTurnGame;
     }
+
+    public PlayerModel whoseTurnItIs() {
+        return players.get(curTurnGame.whoseTurnItIs());
+    }
 }
 

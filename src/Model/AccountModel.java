@@ -12,7 +12,7 @@ public class AccountModel implements Comparable<AccountModel> {
         totalWins = 0;
     }
 
-    //TODO not finished Games are Counted in this
+    //Alert not finished Games are Counted in this
     public void win() {
         totalWins += 1;
     }
@@ -29,9 +29,12 @@ public class AccountModel implements Comparable<AccountModel> {
         return name;
     }
 
-    //TODO not belong to Model
-    public String showInformation() {
-        return (name + " " + totalGames + " " + totalWins);
+    public int getTotalGames() {
+        return totalGames;
+    }
+
+    public int getTotalWins() {
+        return totalWins;
     }
 
     @Override

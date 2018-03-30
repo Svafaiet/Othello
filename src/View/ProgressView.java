@@ -1,6 +1,7 @@
 package View;
 
 import View.OthelloView.OthelloView;
+import View.Viewables.PlayerViewable;
 import View.Viewables.ProgressViewable;
 import View.Viewables.Viewable;
 
@@ -8,8 +9,8 @@ public class ProgressView {
     private PlayerView playerView = new PlayerView();
     private OthelloView othelloView = new OthelloView();
 
-    public void showProgress(Viewable veiwable) {
-        ProgressViewable progressViewable = (ProgressViewable) veiwable;
+    public void showProgress(Viewable viewable) {
+        ProgressViewable progressViewable = (ProgressViewable) viewable;
         StringBuilder progressView = new StringBuilder(progressViewable.getGameName());
         for (String player : progressViewable.getPlayers()) {
             progressView.append(" ").append(player);
@@ -27,7 +28,4 @@ public class ProgressView {
         othelloView.viewGame(viewable);
     }
 
-    public void showWiningPlayer(Viewable viewable) {
-        playerView.showWiningPlayer(((ProgressViewable) viewable).getPlayerViewable());
-    }
 }

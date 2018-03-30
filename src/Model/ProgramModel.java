@@ -22,6 +22,10 @@ public class ProgramModel {
         return notFinishedProgresses;
     }
 
+    public ProgressModel getRunningProgress() {
+        return runningProgress;
+    }
+
     public ArrayList<AccountModel> getAccounts() {
         return accounts;
     }
@@ -113,12 +117,10 @@ public class ProgramModel {
         for(PlayerModel player : runningProgress.getPlayers()) {
             findAccountByName(player.getPlayerName()).endedAGame();
         }
-        String winnerName = runningProgress.getPlayers().get(
-                runningProgress.getCurTurnGame().whoWonIndex())
-                .getPlayerName();
-        findAccountByName(winnerName).win();
+        PlayerModel winner = runningProgress.whoseTurnItIs();
+        findAccountByName(winner.getPlayerName()).win();
         quitProgress();
-        return new EndProgressReturnValue(winnerName);
+        return new EndProgressReturnValue(winner.getPlayerName());
     }
 
     private void quitProgress() {
