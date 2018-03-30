@@ -9,12 +9,12 @@ public class ProgramView {
     private ProgressView progressView = new ProgressView();
     private AccountView accountView = new AccountView();
 
-    public String[] getUserRequest() {
+    public String getUserRequest() {
         String requestText;
         requestText = scanner.nextLine().replaceAll("\\s+", " ");
         requestText = requestText.replaceAll("^ ", "").replaceAll(" $", "");
         System.out.println(requestText);
-        return requestText.split(" ");
+        return requestText;
     }
 
     public void showProgramRequest(Viewable viewable) {

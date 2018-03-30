@@ -1,15 +1,19 @@
 package View.Viewables;
 
-import View.ShowRequestType;
+import View.ProgramRequestType;
 
-public abstract class Viewable {
-    private ShowRequestType requestType;
+public class Viewable {
+    private ProgramRequestType requestType;
 
-    public void setRequestType(ShowRequestType requestType) {
+    public Viewable(ProgramRequestType requestType) {
         this.requestType = requestType;
     }
 
-    public ShowRequestType getRequestType() {
+    public void setRequestType(ProgramRequestType requestType) {
+        this.requestType = requestType;
+    }
+
+    public ProgramRequestType getRequestType() {
         return requestType;
     }
 }

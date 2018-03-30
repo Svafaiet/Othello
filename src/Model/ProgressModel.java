@@ -35,6 +35,10 @@ public class ProgressModel {
         return players;
     }
 
+    public String getProgressName() {
+        return progressName;
+    }
+
     public MakeMoveReturnValue makeMove(MoveModel move) {
         if(curTurnGame.isMoveValid(move)) {
             lastTurnGame = curTurnGame.clone();

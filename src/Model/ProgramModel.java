@@ -1,5 +1,9 @@
 package Model;
 
+import Model.ReturnValues.AddNewPlayerReturnValue;
+import Model.ReturnValues.AddNewProgressReturnValue;
+import Model.ReturnValues.LoadProgressReturnValue;
+
 import java.util.ArrayList;
 
 public class ProgramModel {
@@ -42,7 +46,8 @@ public class ProgramModel {
         return null;
     }
 
-    public AddNewPlayerReturnValue addNewAccount(AccountModel account) {
+    public AddNewPlayerReturnValue addNewAccount(String accountName) {
+        AccountModel account = new AccountModel(accountName);
         AddNewPlayerReturnValue addNewPlayerReturnValue = new AddNewPlayerReturnValue(accounts.contains(account));
         if (!accounts.contains(account)) {
             accounts.add(account);
@@ -74,7 +79,8 @@ public class ProgramModel {
         return loadProgressReturnValue;
     }
 
-    public UndoReturnValue undo(String progressName) {
+    public UndoReturnValue undo() {
+        String progressName = runningProgress.getProgressName();
         ProgressModel progress = findProgressByName(progressName);
         if (progress.isUndoValid()) {
             progress.useUndo();
@@ -89,7 +95,7 @@ public class ProgramModel {
         return runningProgress.makeMove(move);
     }
 
-    private boolean isAnyProgressRunning() {
+    public boolean isAnyProgressRunning() {
         if (runningProgress == null) {
             return false;
         }
@@ -122,82 +128,3 @@ public class ProgramModel {
 
 }
 
-class AddNewProgressReturnValue {
-
-    private boolean hasProgress;
-    private boolean hasPlayer;
-
-    public boolean hasProgress() {
-        return hasProgress;
-    }
-
-    public void isProgressNew(boolean hasProgress) {
-        this.hasProgress = hasProgress;
-    }
-
-    public boolean hasPlayer() {
-        return hasPlayer;
-    }
-
-    public void arePlayersNew(boolean hasPlayer) {
-        this.hasPlayer = hasPlayer;
-    }
-
-    public boolean isRequestValid() {
-        return !hasProgress && hasPlayer;
-    }
-}
-
-class EndProgressReturnValue {
-    private boolean hasProgress;
-
-    public boolean hasProgress() {
-        return hasProgress;
-    }
-
-    public EndProgressReturnValue(boolean hasProgress) {
-        this.hasProgress = hasProgress;
-    }
-}
-
-class AddNewPlayerReturnValue {
-    private boolean hasPlayer;
-
-    public boolean hasPlayer() {
-        return hasPlayer;
-    }
-
-    public AddNewPlayerReturnValue(boolean hasPlayer) {
-        this.hasPlayer = hasPlayer;
-    }
-}
-
-class LoadProgressReturnValue {
-    private boolean hasGame;
-    private boolean anyGameRunning;
-
-    public boolean isAnyGameRunning() {
-        return anyGameRunning;
-    }
-
-    public boolean hasGame() {
-        return hasGame;
-    }
-
-    public LoadProgressReturnValue(boolean hasGame, boolean anyGameRunning) {
-        this.hasGame = hasGame;
-        this.anyGameRunning = anyGameRunning;
-    }
-}
-
-class UndoReturnValue {
-    private boolean canUndo = true;
-
-    public void canNotUndo() {
-        canUndo = false;
-    }
-
-    public boolean canUndo() {
-        return canUndo;
-    }
-}
