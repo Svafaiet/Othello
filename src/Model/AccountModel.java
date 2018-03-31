@@ -46,14 +46,14 @@ public class AccountModel implements Comparable<AccountModel> {
     @Override
     public int compareTo(AccountModel anotherAccount) {
         if (anotherAccount.totalWins > totalWins) {
-            return -1;
-        } else if (anotherAccount.totalWins < totalWins) {
             return 1;
+        } else if (anotherAccount.totalWins < totalWins) {
+            return -1;
         } else {
             if (anotherAccount.totalGames > totalGames) {
-                return 1;
-            } else if (anotherAccount.totalGames < totalGames) {
                 return -1;
+            } else if (anotherAccount.totalGames < totalGames) {
+                return 1;
             } else {
                 return this.name.compareTo(anotherAccount.name);
             }
