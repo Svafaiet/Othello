@@ -98,10 +98,10 @@ public class OthelloModel extends GameModel {
         if (isInRange(Direction.moveInDirection(dir, point, 1)) &&
                 isCellOpposite(Direction.moveInDirection(dir, point, 1))) {
             for (int i = 2; i < 6; i++) {
-                if (isCellSame(Direction.moveInDirection(dir, point, i))) {
-                    return true;
-                } else if(!isInRange(point) || at(Direction.moveInDirection(dir, point, i)).equals(Cell.CELL_EMPTY)) {
+                if(!isInRange(point) || at(Direction.moveInDirection(dir, point, i)).equals(Cell.CELL_EMPTY)) {
                     break;
+                } else if (isCellSame(Direction.moveInDirection(dir, point, i))) {
+                    return true;
                 }
             }
         }
