@@ -1,0 +1,8 @@
+new player 0
+new player 1
+new game 1 0 g1
+D2
+E2
+E3
+C2
+F1
