@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba5cab57-b4c0-495b-b543-cb3465baab4d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Model/OthelloGameLogic/OthelloModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/OthelloGameLogic/OthelloModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCase1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase1.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -507,16 +507,15 @@
       <workItem from="1521986223829" duration="26780000" />
       <workItem from="1522181996305" duration="19373000" />
       <workItem from="1522309619392" duration="15197000" />
-      <workItem from="1522360938241" duration="32284000" />
+      <workItem from="1522360938241" duration="33312000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96488000" />
+    <option name="totallyTimeSpent" value="97516000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="7" />
